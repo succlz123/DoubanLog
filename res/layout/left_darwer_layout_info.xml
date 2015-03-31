@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:descendantFocusability="blocksDescendants">
+    <!--listview 上的button  会覆盖listview 本身的 click监听-->
+
+    <ImageView android:layout_width="48dp"
+               android:layout_height="48dp"
+               android:id="@+id/list_view_info_img"
+               android:layout_centerVertical="true"
+               android:layout_centerHorizontal="true"
+               android:layout_alignParentLeft="true"
+               android:background="@drawable/info"
+               android:layout_marginLeft="3dp"/>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical"
+                  android:id="@+id/list_view_info_line"
+                  android:layout_toRightOf="@+id/list_view_info_img"
+                  android:layout_toLeftOf="@+id/list_view_info_logout">
+
+        <TextView android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:layout_weight="7"
+                  android:id="@+id/darwer_user_name"/>
+
+        <TextView android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:layout_weight="8"
+                  android:id="@+id/darwer_creat_time"/>
+    </LinearLayout>
+
+    <Button android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:id="@+id/list_view_info_logout"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/close"/>
+
+
+</RelativeLayout>

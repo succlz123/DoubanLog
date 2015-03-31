@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:title="设置">
+
+    <PreferenceCategory
+            android:summary="分组1"
+            android:title="分组1标题">
+
+        <CheckBoxPreference
+                android:key="doubi"
+                android:summaryOff="关闭"
+                android:summaryOn="开启"
+                android:title="模式">
+        </CheckBoxPreference>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+            android:summary="分组2"
+            android:title="关于">
+
+        <Preference
+                android:key="upatde"
+                android:title="检查新版本"/>
+        <Preference
+                android:key="about"
+                android:title="关于YunMusic"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

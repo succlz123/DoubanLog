@@ -1,0 +1,17 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppTheme" parent="@android:style/Theme.Material.Light.NoActionBar">
+
+
+        <!-- toolbar（actionbar）颜色 (其实是缩略图标题颜色)-->
+        <item name="android:colorPrimary">@color/basecolor</item>
+
+        <!-- 状态栏颜色 -->
+        <item name="android:colorPrimaryDark">@color/basebackground</item>
+        <!-- 窗口的背景颜色 -->
+        <item name="android:windowBackground">@android:color/white</item>
+        <!-- 底部导航栏颜色 -->
+        <item name="android:navigationBarColor">@color/basecolor</item>
+
+    </style>
+</resources>

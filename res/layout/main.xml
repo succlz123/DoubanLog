@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="fill_parent"
-              android:layout_height="fill_parent"
-        >
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-    <Button
-            android:layout_width="100dp"
-            android:layout_height="61.8dp"
-            android:id="@+id/login_btn"
-            android:text="点击登录"
-            android:textSize="18sp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            />
+    <include layout="@layout/toolbar" android:id="@+id/include"/>
+
+
+
+
+
+    <include layout="@layout/darwer_layout" android:layout_marginTop="48dp"
+             android:layout_width="match_parent" android:layout_height="match_parent"/>
+
 
 </RelativeLayout>
 
