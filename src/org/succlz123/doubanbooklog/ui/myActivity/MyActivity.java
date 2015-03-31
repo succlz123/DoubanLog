@@ -1,6 +1,7 @@
-package org.succlz123.doubanbooklog.ui;
+package org.succlz123.doubanbooklog.ui.myActivity;
 
 import android.graphics.Color;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
@@ -9,8 +10,12 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.view.*;
 import android.widget.*;
+import org.succlz123.doubanbooklog.DoubanApplication;
 import org.succlz123.doubanbooklog.R;
-import org.succlz123.doubanbooklog.ui.left_fragment.*;
+import org.succlz123.doubanbooklog.bean.DbInfo;
+import org.succlz123.doubanbooklog.bean.DbAccount;
+import org.succlz123.doubanbooklog.dao.DbInfoApi;
+import org.succlz123.doubanbooklog.ui.leftfrag.*;
 
 import java.util.ArrayList;
 
@@ -45,7 +50,7 @@ public class MyActivity extends FragmentActivity {
         mToolbar.setTitle("豆瓣BookLog");
         mToolbar.setTitleTextColor(Color.parseColor("#FFFFFF"));
         setActionBar(mToolbar);
-         toolbarbtn = (Button) findViewById(R.id.toolbar_btn);
+        toolbarbtn = (Button) findViewById(R.id.toolbar_btn);
         toolbarbtn.setOnClickListener(toolbarBtnListener);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.darwer_layout);
@@ -197,6 +202,16 @@ public class MyActivity extends FragmentActivity {
                 switch (getItemViewType(i)) {
                     case TYPE_INFO:
                         view = getLayoutInflater().inflate(R.layout.left_darwer_layout_info, viewGroup, false);
+                        ImageView imageView = (ImageView) view.findViewById(R.id.list_view_info_img);
+                        TextView textView1 = (TextView) view.findViewById(R.id.darwer_user_name);
+                        TextView textView2 = (TextView) view.findViewById(R.id.darwer_creat_time);
+                        if (DoubanApplication.getInstance().getAccount() != null) {
+//                            textView1.setText(DbInfoApi.getDbInfo(tonken));
+                            new MyInfoAsyncTask(textView1, DoubanApplication.getInstance().getAccount(),textView2)
+                                    .executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+
+                        }
+
                         break;
                     case TYPE_COMMON:
                         view = getLayoutInflater().inflate(R.layout.left_darwer_layout_option, viewGroup, false);
@@ -309,5 +324,40 @@ public class MyActivity extends FragmentActivity {
         }
 
         super.onBackPressed();
+    }
+
+    private class MyInfoAsyncTask extends AsyncTask<Void, DbInfo, DbInfo> {
+
+        private TextView name;
+        private DbAccount token;
+        private TextView created;
+
+        public MyInfoAsyncTask(TextView name, DbAccount token,TextView created) {
+            this.name = name;
+            this.token = token;
+            this.created= created;
+        }
+
+        @Override
+        protected DbInfo doInBackground(Void... voids) {
+//读取数据库资料
+
+            //没有的话读取网络,然后写入数据库
+
+//            DbInfoApi.getDbInfo(this.token.getAccess_token());
+
+            return DbInfoApi.getDbInfo(this.token.getAccess_token());
+        }
+
+        @Override
+        protected void onPostExecute(DbInfo aVoid) {
+            super.onPostExecute(aVoid);
+
+            if(aVoid!=null){
+                name.setText(aVoid.getName());
+                created.setText(aVoid.getCreated());
+
+            }
+        }
     }
 }

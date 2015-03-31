@@ -20,7 +20,10 @@ public class ReadApi {
 
     static ArrayList<BookInfo> books = new ArrayList<BookInfo>();
 
-    public static void getBooks() {
+    public static void getBooks(String id) {
+
+        String url = ApiUrlHelper.USER_ALL_NOTE;
+        url = url.replace(":id", id);
 
         new Thread(new Runnable() {
             String xml = rawRead();
@@ -47,7 +50,7 @@ public class ReadApi {
 
                 String nodeName = xmlPullParser.getName();
 
-                String xx = xmlPullParser.getAttributeValue("db:attribute","author-intro");
+                String xx = xmlPullParser.getAttributeValue("db:attribute", "author-intro");
 
                 switch (evenType) {
 
@@ -60,9 +63,9 @@ public class ReadApi {
                         } else if ("db:attribute".equals(nodeName)) {
 
 //                            bookInfo.setSummary(xmlPullParser.getAttributeValue(null, "name"));
-                          if("author-intro".equals(xmlPullParser.getAttributeValue(null, "name"))){
+                            if ("author-intro".equals(xmlPullParser.getAttributeValue(null, "name"))) {
 
-                          }
+                            }
 
 //                                bookInfo.setSummary(xmlPullParser.nextText());
 

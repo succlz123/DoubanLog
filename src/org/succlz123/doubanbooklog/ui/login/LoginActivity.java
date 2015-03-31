@@ -14,7 +14,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.succlz123.doubanbooklog.DoubanApplication;
 import org.succlz123.doubanbooklog.R;
-import org.succlz123.doubanbooklog.bean.DoubanAccount;
+import org.succlz123.doubanbooklog.bean.DbAccount;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -96,7 +96,7 @@ public class LoginActivity extends Activity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            DoubanAccount account = getAccoutFromJson(json);
+                            DbAccount account = getAccoutFromJson(json);
                             DoubanApplication.getInstance().addAccount(account);
                             finish();
                         }
@@ -123,7 +123,7 @@ public class LoginActivity extends Activity {
         return out.toString();
     }
 
-    private DoubanAccount getAccoutFromJson(String result) {
+    private DbAccount getAccoutFromJson(String result) {
         try {
             JSONObject jsonObject = new JSONObject(result);
             String accessToken = jsonObject.optString("access_token", "");
@@ -132,7 +132,7 @@ public class LoginActivity extends Activity {
             Integer expiresIn = jsonObject.optInt("expires_in", 0);
             String refreshToken = jsonObject.optString("refresh_token", "");
 
-            DoubanAccount dba = new DoubanAccount();
+            DbAccount dba = new DbAccount();
             dba.setAccess_token(accessToken);
             dba.setDouban_user_name(userName);
             dba.setDouban_user_id(userId);

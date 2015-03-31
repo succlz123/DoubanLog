@@ -1,4 +1,4 @@
-package org.succlz123.doubanbooklog.ui.main_fragment;
+package org.succlz123.doubanbooklog.ui.mainFrag;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -10,11 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
-import org.succlz123.doubanbooklog.DoubanApplication;
 import org.succlz123.doubanbooklog.R;
 import org.succlz123.doubanbooklog.bean.Book;
-import org.succlz123.doubanbooklog.bean.DoubanAccount;
-import org.succlz123.doubanbooklog.dao.ReadingApi;
+import org.succlz123.doubanbooklog.bean.DbAccount;
 import org.succlz123.doubanbooklog.ui.login.LoginActivity;
 
 import java.io.IOException;
@@ -29,7 +27,7 @@ import java.util.List;
  */
 public class ReadingFragment extends Fragment {
 
-    private DoubanAccount account;
+    private DbAccount account;
     private List<Book> list;
 
     @Nullable
@@ -56,44 +54,44 @@ public class ReadingFragment extends Fragment {
 
         listView.setAdapter(adapter);
 
-        this.account = DoubanApplication.getInstance().getAccount();
-        if (this.account == null) {
-            login_btn.setVisibility(View.VISIBLE);
-        } else {
-            login_btn.setVisibility(View.INVISIBLE);
-            refresh();
-        }
-
-        DoubanApplication.getInstance().addAccountListener(new DoubanApplication.AccountChangeListener() {
-            @Override
-            public void onAccount(DoubanAccount account) {
-                ReadingFragment.this.account = account;
-                login_btn.setVisibility(View.INVISIBLE);
-                refresh();
-            }
-        });
+//        this.account = DoubanApplication.getInstance().getAccount();
+//        if (this.account == null) {
+//            login_btn.setVisibility(View.VISIBLE);
+//        } else {
+//            login_btn.setVisibility(View.INVISIBLE);
+//            refresh();
+//        }
+//
+//        DoubanApplication.getInstance().addAccountListener(new DoubanApplication.AccountChangeListener() {
+//            @Override
+//            public void onAccount(DbToken account) {
+//                ReadingFragment.this.account = account;
+//                login_btn.setVisibility(View.INVISIBLE);
+//                refresh();
+//            }
+//        });
 
 
         return view;
     }
 
 
-    private void refresh() {
-        final String token = this.account.getAccess_token();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                final List<Book> bookList = ReadingApi.getBooks(token);
-                getActivity().runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        ReadingFragment.this.list = bookList;
-                        adapter.notifyDataSetChanged();//刷新 adapter
-                    }
-                });
-            }
-        }).start();
-    }
+//    private void refresh() {
+//        final String token = this.account.getAccess_token();
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                final List<Book> bookList = ReadingApi.getBooks(token);
+//                getActivity().runOnUiThread(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        ReadingFragment.this.list = bookList;
+//                        adapter.notifyDataSetChanged();//刷新 adapter
+//                    }
+//                });
+//            }
+//        }).start();
+//    }
 
     BaseAdapter adapter = new BaseAdapter() {
 

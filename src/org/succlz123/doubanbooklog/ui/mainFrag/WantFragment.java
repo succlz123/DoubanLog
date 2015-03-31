@@ -1,4 +1,4 @@
-package org.succlz123.doubanbooklog.ui.main_fragment;
+package org.succlz123.doubanbooklog.ui.mainFrag;
 
 import android.content.Intent;
 import android.os.Bundle;

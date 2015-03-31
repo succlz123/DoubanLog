@@ -3,7 +3,7 @@ package org.succlz123.doubanbooklog.bean;
 /**
  * Created by fashi on 2015/3/25.
  */
-public class DoubanAccount {
+public class DbAccount {
 
     private String access_token;
     private String douban_user_name;

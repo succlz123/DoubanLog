@@ -1,4 +1,4 @@
-package org.succlz123.doubanbooklog.ui.main_fragment;
+package org.succlz123.doubanbooklog.ui.mainFrag;
 
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -14,8 +14,7 @@ import android.widget.TextView;
 import org.succlz123.doubanbooklog.DoubanApplication;
 import org.succlz123.doubanbooklog.R;
 import org.succlz123.doubanbooklog.bean.BookInfo;
-import org.succlz123.doubanbooklog.bean.DoubanAccount;
-import org.succlz123.doubanbooklog.dao.ReadApi;
+import org.succlz123.doubanbooklog.bean.DbAccount;
 
 import java.util.List;
 
@@ -24,7 +23,7 @@ import java.util.List;
  */
 public class ReadFragment extends Fragment {
 
-    private DoubanAccount account;
+    private DbAccount account;
 
     private List<BookInfo> list;
 
@@ -47,7 +46,7 @@ public class ReadFragment extends Fragment {
 
 //                                             Intent intent = new Intent(getActivity(), LoginActivity.class);
 //                                             startActivityForResult(intent, 0);
-                                             ReadApi.getBooks();
+//                                             ReadApi.getBooks();
 //                                             List<BookInfo> bookList = ReadApi.getBooks();
 //                                             Log.d("1123", ReadApi.getBooks());
 
@@ -70,7 +69,7 @@ public class ReadFragment extends Fragment {
 
         DoubanApplication.getInstance().addAccountListener(new DoubanApplication.AccountChangeListener() {
             @Override
-            public void onAccount(DoubanAccount account) {
+            public void onAccount(DbAccount account) {
                 ReadFragment.this.account = account;
                 login_btn.setVisibility(View.INVISIBLE);
                 refresh();

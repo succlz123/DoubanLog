@@ -1,4 +1,4 @@
-package db;
+package org.succlz123.doubanbooklog.support.database;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import org.succlz123.doubanbooklog.DoubanApplication;
 import org.succlz123.doubanbooklog.bean.BookInfo;
-import org.succlz123.doubanbooklog.bean.DoubanAccount;
+import org.succlz123.doubanbooklog.bean.DbAccount;
 
 /**
  * Created by fashi on 2015/3/27.
@@ -41,7 +41,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public void insert(DoubanAccount account) {
+    public void insert(DbAccount account) {
         SQLiteDatabase db = getWritableDatabase();
 
         ContentValues cv = new ContentValues();
@@ -63,12 +63,12 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public DoubanAccount get() {
+    public DbAccount get() {
         SQLiteDatabase db = getWritableDatabase();
         Cursor c = db.query("info", null, null, null, null, null, null);
         if (c.getCount() > 0) {
             c.moveToFirst();
-            DoubanAccount account = new DoubanAccount();
+            DbAccount account = new DbAccount();
             account.setAccess_token(c.getString(0));
             account.setDouban_user_name(c.getString(1));
             account.setDouban_user_id(c.getInt(2));

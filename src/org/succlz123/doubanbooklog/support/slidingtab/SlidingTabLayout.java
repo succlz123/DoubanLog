@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.succlz123.doubanbooklog.support.lib;
+package org.succlz123.doubanbooklog.support.slidingtab;
 
 import android.content.Context;
 import android.graphics.Typeface;

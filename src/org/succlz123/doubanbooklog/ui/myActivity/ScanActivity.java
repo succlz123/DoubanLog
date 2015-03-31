@@ -1,4 +1,4 @@
-package org.succlz123.doubanbooklog.ui;
+package org.succlz123.doubanbooklog.ui.myActivity;
 
 import android.app.Activity;
 

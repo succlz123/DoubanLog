@@ -60,4 +60,9 @@ public class Book {
         this.tag = tag;
     }
 
+
+//    public static Book parseJson(String json) {
+//
+//    }
+
 }

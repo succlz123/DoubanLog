@@ -1,8 +1,8 @@
 package org.succlz123.doubanbooklog;
 
 import android.app.Application;
-import org.succlz123.doubanbooklog.bean.DoubanAccount;
-import db.MyDatabaseHelper;
+import org.succlz123.doubanbooklog.bean.DbAccount;
+import org.succlz123.doubanbooklog.support.database.MyDatabaseHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,12 +13,12 @@ import java.util.List;
 public class DoubanApplication extends Application {
 
     public static interface AccountChangeListener {
-        public void onAccount(DoubanAccount account);
+        public void onAccount(DbAccount account);
     }
 
     private static DoubanApplication instance;
 
-    private DoubanAccount account;
+    private DbAccount account;
     private List<AccountChangeListener> accountChangeListenerList = new ArrayList<AccountChangeListener>();
 
     @Override
@@ -33,14 +33,14 @@ public class DoubanApplication extends Application {
         return instance;
     }
 
-    public DoubanAccount getAccount() {
+    public DbAccount getAccount() {
         if (this.account == null) {
             this.account = MyDatabaseHelper.getInstance().get();
         }
         return this.account;
     }
 
-    public void addAccount(DoubanAccount account) {
+    public void addAccount(DbAccount account) {
         this.account = account;
         MyDatabaseHelper.getInstance().insert(account);
         for (AccountChangeListener listener : accountChangeListenerList) {
