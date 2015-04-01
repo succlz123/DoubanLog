@@ -1,4 +1,4 @@
-package org.succlz123.doubanbooklog.ui.mainFrag;
+package org.succlz123.doubanbooklog.ui.mainfragment;
 
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -13,7 +13,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import org.succlz123.doubanbooklog.DoubanApplication;
 import org.succlz123.doubanbooklog.R;
-import org.succlz123.doubanbooklog.bean.BookInfo;
+import org.succlz123.doubanbooklog.bean.Book22Info.BookInfo;
 import org.succlz123.doubanbooklog.bean.DbAccount;
 
 import java.util.List;

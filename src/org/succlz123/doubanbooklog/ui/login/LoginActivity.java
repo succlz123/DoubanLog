@@ -126,6 +126,7 @@ public class LoginActivity extends Activity {
     private DbAccount getAccoutFromJson(String result) {
         try {
             JSONObject jsonObject = new JSONObject(result);
+
             String accessToken = jsonObject.optString("access_token", "");
             String userName = jsonObject.optString("douban_user_name", "");
             Integer userId = jsonObject.optInt("douban_user_id", 0);
@@ -140,7 +141,6 @@ public class LoginActivity extends Activity {
             dba.setRefresh_token(refreshToken);
 
             return dba;
-
         } catch (JSONException e) {
             e.printStackTrace();
         }

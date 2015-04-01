@@ -1,17 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@android:color/holo_red_light"
-              android:id="@+id/about_fragmant">
+              android:layout_height="match_parent">
+
+
+    <ImageView android:layout_width="80dp"
+               android:layout_height="80dp"
+               android:src="@drawable/ic_launcher"
+               android:id="@+id/ic_launcher"
+               android:layout_gravity="center_horizontal"
+               android:layout_marginTop="70dp"
+            />
 
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text="DouBanBookLog 1.0"
+            android:layout_marginTop="40dp"
+            android:textSize="18sp"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text="Design By Succlz123"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"/>
 
-            android:textSize="50dp"
-            android:text="about"
-            android:id="@+id/textView4"
-            android:layout_centerVertical="true" android:layout_alignParentEnd="true" android:layout_marginEnd="76dp"/>
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="40dp"
+                  android:orientation="horizontal">
+
+        <Button android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="评分"
+                android:layout_weight="1"
+                android:background="@color/white"/>
+
+        <Button android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="分享"
+                android:layout_weight="1"
+                android:background="@color/white"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="100dp"
+                  android:orientation="vertical">
+
+        <Button android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="作者微博"
+                android:background="@color/white"/>
+
+        <Button android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="请作者喝茶"
+                android:background="@color/white"
+                />
+    </LinearLayout>
+
 </LinearLayout>

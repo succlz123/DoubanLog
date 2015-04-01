@@ -6,7 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import org.succlz123.doubanbooklog.DoubanApplication;
-import org.succlz123.doubanbooklog.bean.BookInfo;
+import org.succlz123.doubanbooklog.bean.Book22Info.BookInfo;
 import org.succlz123.doubanbooklog.bean.DbAccount;
 
 /**

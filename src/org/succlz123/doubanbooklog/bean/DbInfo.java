@@ -101,6 +101,8 @@ public class DbInfo {
 
     public static DbInfo parseJson(JSONObject object) {
         try {
+            DbInfo dbInfo = new DbInfo();
+
             String name = object.getString("name");
             String created = object.getString("created");
             String avatar = object.getString("avatar");
@@ -110,7 +112,7 @@ public class DbInfo {
             String desc = object.getString("desc");
             String id = object.getString("id");
             String large_avatar = object.getString("large_avatar");
-            DbInfo dbInfo = new DbInfo();
+
             dbInfo.setName(name);
             dbInfo.setCreated(created);
             dbInfo.setAvatar(avatar);
@@ -120,12 +122,11 @@ public class DbInfo {
             dbInfo.setDesc(desc);
             dbInfo.setId(id);
             dbInfo.setLarge_avatar(large_avatar);
+
             return dbInfo;
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
         return null;
-
     }
 }

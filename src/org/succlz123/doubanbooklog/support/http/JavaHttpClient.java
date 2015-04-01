@@ -43,7 +43,7 @@ public class JavaHttpClient {
                     connection.setRequestProperty(key, headers.get(key));
                 }
             }
-            connection.connect();
+
             if (connection.getResponseCode() == 200) {
                 InputStream in = connection.getInputStream();
                 BufferedReader reader = new BufferedReader(new InputStreamReader(in));
