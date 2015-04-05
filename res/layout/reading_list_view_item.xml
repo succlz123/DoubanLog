@@ -9,20 +9,21 @@
                android:id="@+id/reading_list_view_item_img"
                android:background="@color/white"
                android:layout_marginLeft="7dp"
-            android:layout_centerVertical="true"/>
+               android:layout_centerVertical="true"/>
 
     <TextView android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:id="@+id/reading_list_view_item_bookname"
               android:layout_toRightOf="@+id/reading_list_view_item_img"
-              android:text="123" android:layout_alignParentEnd="false" android:layout_marginLeft="20dp"
+              android:layout_alignParentEnd="false"
+              android:layout_marginLeft="20dp"
               android:textColor="@color/black"
               android:textSize="18sp"/>
 
     <TextView android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:id="@+id/reading_list_view_item_writer"
-              android:text="123" android:layout_below="@+id/reading_list_view_item_bookname"
+              android:layout_below="@+id/reading_list_view_item_bookname"
               android:layout_alignStart="@+id/reading_list_view_item_bookname"/>
 
     <TextView android:layout_width="wrap_content"
@@ -30,29 +31,24 @@
               android:id="@+id/reading_list_view_item_info"
               android:layout_toRightOf="@+id/reading_list_view_item_img"
               android:layout_below="@+id/reading_list_view_item_writer"
-              android:layout_alignStart="@+id/reading_list_view_item_bookname"
-              android:text="123"/>
+              android:layout_alignStart="@+id/reading_list_view_item_bookname"/>
 
     <LinearLayout android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:orientation="vertical"
                   android:layout_toRightOf="@+id/reading_list_view_item_img"
                   android:layout_below="@+id/reading_list_view_item_info"
-                  android:layout_alignStart="@+id/reading_list_view_item_bookname"
-                  android:background="@color/lightgray">
+                  android:layout_alignStart="@+id/reading_list_view_item_bookname">
 
         <TextView android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:id="@+id/reading_list_view_item_time"
-
-                  android:textColor="@color/white"
-                  android:text="123"/>
+                  android:textColor="@color/basecolor"/>
 
         <TextView android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:id="@+id/reading_list_view_item_tag"
-                  android:textColor="@color/basecolor"
-                  android:text="123"/>
+                  android:textColor="@color/basecolor"/>
 
     </LinearLayout>
 

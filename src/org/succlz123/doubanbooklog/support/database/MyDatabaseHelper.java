@@ -6,7 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import org.succlz123.doubanbooklog.DoubanApplication;
-import org.succlz123.doubanbooklog.bean.Book22Info.BookInfo;
 import org.succlz123.doubanbooklog.bean.DbAccount;
 
 /**
@@ -53,14 +52,14 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         db.replace("info", null, cv);
     }
 
-    public void insert(BookInfo bookInfo) {
-        SQLiteDatabase db = getWritableDatabase();
-
-        ContentValues cv = new ContentValues();
-        cv.put("token", bookInfo.getAlternate());
-
-        db.replace("info", null, cv);
-    }
+//    public void insert(DbAccount account) {
+//        SQLiteDatabase db = getWritableDatabase();
+//
+//        ContentValues cv = new ContentValues();
+//        cv.put("token", account.getAlternate());
+//
+//        db.replace("info", null, cv);
+//    }
 
 
     public DbAccount get() {

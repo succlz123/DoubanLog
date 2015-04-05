@@ -4,9 +4,22 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent">
 
-    <ListView android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:id="@+id/reading_list_view"></ListView>
+    <!--<android.support.v4.widget.SwipeRefreshLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:id="@+id/reading_list_view_swiperefreshlayout">-->
+
+    <org.succlz123.doubanbooklog.support.xlistview.me.maxwin.view.XListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/reading_list_view"
+            android:cacheColorHint="#00000000"
+            android:dividerHeight="3dp">
+
+    </org.succlz123.doubanbooklog.support.xlistview.me.maxwin.view.XListView>
+
+    <!--</android.support.v4.widget.SwipeRefreshLayout>-->
+
     <Button
             android:layout_width="100dp"
             android:layout_height="48dp"
@@ -15,7 +28,8 @@
             android:textSize="18sp"
             android:background="@color/basecolor"
             android:textColor="@android:color/white"
-            android:layout_gravity="center" android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"/>
 
 </FrameLayout>

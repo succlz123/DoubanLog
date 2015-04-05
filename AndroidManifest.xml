@@ -24,6 +24,8 @@
         </activity>
         <activity android:name=".ui.login.LoginActivity"/>
         <activity android:name=".ui.activity.ScanActivity"/>
+        <activity android:name=".ui.activity.ContentActivity"/>
+        <activity android:name=".ui.activity.SetAnnotationActivity"/>
 
     </application>
 </manifest>

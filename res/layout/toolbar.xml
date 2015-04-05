@@ -14,9 +14,6 @@
             android:layout_marginLeft="7dp"
             />
 
-
-
-
     <Toolbar android:layout_width="match_parent"
              android:layout_height="46dp"
              android:id="@+id/toolbar"

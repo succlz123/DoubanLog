@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+             android:orientation="vertical"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
 
-    <ListView android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:id="@+id/read_list_view"></ListView>
+    <org.succlz123.doubanbooklog.support.xlistview.me.maxwin.view.XListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/read_list_view"
+            android:dividerHeight="3dp"
+            >
+    </org.succlz123.doubanbooklog.support.xlistview.me.maxwin.view.XListView>
 
     <Button
             android:layout_width="100dp"

@@ -1,9 +1,5 @@
 package org.succlz123.doubanbooklog.support.http;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.succlz123.doubanbooklog.bean.DbAccount;
-
 import javax.net.ssl.HttpsURLConnection;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -68,7 +64,6 @@ public class JavaHttpClient {
     public String doPost() {
 
         try {
-
             URL url = new URL("");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("POST");
@@ -81,50 +76,12 @@ public class JavaHttpClient {
                 String line;
                 while ((line = reader.readLine()) != null) {
 
-                    final String json = inputStream2String(in);
-
                 }
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         return null;
     }
 
-
-    public String inputStream2String(InputStream in) throws IOException {
-
-        StringBuffer out = new StringBuffer();
-        byte[] b = new byte[4096];
-
-        for (int n; (n = in.read(b)) != -1; ) {
-            out.append(new String(b, 0, n));
-        }
-        return out.toString();
-    }
-
-    private DbAccount getDoubanInfoFromJson(String result) {
-        try {
-            JSONObject jsonObject = new JSONObject(result);
-            String accessToken = jsonObject.optString("access_token", "");
-            String userName = jsonObject.optString("douban_user_name", "");
-            Integer userId = jsonObject.optInt("douban_user_id", 0);
-            Integer expiresIn = jsonObject.optInt("expires_in", 0);
-            String refreshToken = jsonObject.optString("refresh_token", "");
-
-            DbAccount dba = new DbAccount();
-            dba.setAccess_token(accessToken);
-            dba.setDouban_user_name(userName);
-            dba.setDouban_user_id(userId);
-            dba.setExpires_in(expiresIn);
-            dba.setRefresh_token(refreshToken);
-
-            return dba;
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
 }

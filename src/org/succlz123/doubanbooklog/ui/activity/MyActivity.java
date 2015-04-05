@@ -207,12 +207,20 @@ public class MyActivity extends FragmentActivity {
                         ImageView imageView = (ImageView) view.findViewById(R.id.list_view_info_img);
                         TextView textView1 = (TextView) view.findViewById(R.id.darwer_user_name);
                         TextView textView2 = (TextView) view.findViewById(R.id.darwer_creat_time);
+                        Button button=(Button)view.findViewById(R.id.list_view_info_logout);
                         if (DoubanApplication.getInstance().getAccount() != null) {
                             new MyInfoAsyncTask(textView1, DoubanApplication.getInstance().getAccount(), textView2, imageView)
                                     .executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+                            button.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+
+                                }
+                            });
                         } else {
                             textView1.setText("请登录");
                         }
+
                         break;
                     case TYPE_COMMON:
                         view = getLayoutInflater().inflate(R.layout.left_darwer_layout_option, viewGroup, false);
@@ -351,7 +359,8 @@ public class MyActivity extends FragmentActivity {
 
             DbInfo info = DbInfoApi.getDbInfo(this.token.getAccess_token());
             publishProgress(info);
-            bitmap = GetBmApi.getBitMap(info.getLarge_avatar());
+            String xx=info.getLarge_avatar();
+            bitmap = GetBmApi.getBitMap(xx);
             return info;
         }
 

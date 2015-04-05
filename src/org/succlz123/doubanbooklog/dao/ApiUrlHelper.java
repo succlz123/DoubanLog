@@ -5,17 +5,17 @@ package org.succlz123.doubanbooklog.dao;
  */
 public class ApiUrlHelper {
 
-    public static final String USER_INFO = "https://api.douban.com/v2/user/~me";//apiµÇÈëµØÖ·
-    public static final String BASE = "https://api.douban.com";//apiµ÷ÓÃµØÖ·
-    public static final String BOOK_INFO = BASE + "/v2/book/:id";//»ñÈ¡Í¼ÊéĞÅÏ¢
-    public static final String BOOK_INFO_ISBN = BASE + "/v2/book/isbn/:name";//¸ù¾İisbn»ñÈ¡Í¼ÊéĞÅÏ¢
-    public static final String USER_SEARCH = BASE + "/v2/book/search";//ËÑË÷Í¼Êé
-    public static final String USER_MAX_TAG = BASE + "/v2/book/:id/tags";//»ñÈ¡Ä³¸öÍ¼ÊéÖĞ±ê¼Ç×î¶àµÄ±êÇ©
-    public static final String USER_ALL_TAG = BASE + "/v2/book/user/:name/tags";//»ñÈ¡ÓÃ»§¶ÔÍ¼ÊéµÄËùÓĞ±êÇ©
-    public static final String USER_BOOK_ALL_INFO = BASE + "/v2/book/user/:name/collections";//»ñÈ¡Ä³¸öÓÃ»§µÄËùÓĞÍ¼ÊéÊÕ²ØĞÅÏ¢
-    public static final String USER_ONEBOOK_INFO = BASE + "/v2/book/:id/collection";//»ñÈ¡ÓÃ»§¶ÔÄ³±¾Í¼ÊéµÄÊÕ²ØĞÅÏ¢
-    public static final String USER_ALL_NOTE = BASE + "/v2/book/user/:name/annotations";// »ñÈ¡Ä³¸öÓÃ»§µÄËùÓĞ±Ê¼Ç
-    public static final String USER_ONEBOOK_NOTE = BASE + "/v2/book/:id/annotations";//»ñÈ¡Ä³±¾Í¼ÊéµÄËùÓĞ±Ê¼Ç
-    public static final String USER_ONENOTE_INFO = BASE + "/v2/book/annotation/:id";//»ñÈ¡Ä³Æª±Ê¼ÇµÄĞÅÏ¢
-    public static final String USER_BOOK_CATALOG = BASE + "/v2/book/series/:id/books";//»ñÈ¡´ÔÊéÊéÄ¿ĞÅÏ¢
+    public static final String USER_INFO = "https://api.douban.com/v2/user/~me";//apiè·å–ç”¨æˆ·ä¿¡æ¯
+    public static final String BASE = "https://api.douban.com";//apiå…¥å£
+    public static final String BOOK_INFO = BASE + "/v2/book/:id";//è·å–å›¾ä¹¦ä¿¡æ¯
+    public static final String BOOK_INFO_ISBN = BASE + "/v2/book/isbn/:name";//æ ¹æ®isbnè·å–å›¾ä¹¦ä¿¡æ¯
+    public static final String USER_SEARCH = BASE + "/v2/book/search";//æœç´¢å›¾ä¹¦
+    public static final String USER_MAX_TAG = BASE + "/v2/book/:id/tags";//è·å–æŸä¸ªå›¾ä¹¦ä¸­æ ‡è®°æœ€å¤šçš„æ ‡ç­¾
+    public static final String USER_ALL_TAG = BASE + "/v2/book/user/:name/tags";//è·å–ç”¨æˆ·å¯¹å›¾ä¹¦çš„æ‰€æœ‰æ ‡ç­¾
+    public static final String USER_BOOK_ALL_INFO = BASE + "/v2/book/user/:name/collections";//è·å–æŸä¸ªç”¨æˆ·çš„æ‰€æœ‰å›¾ä¹¦æ”¶è—ä¿¡æ¯
+    public static final String USER_ONEBOOK_INFO = BASE + "/v2/book/:id/collection";//è·å–ç”¨æˆ·å¯¹æŸæœ¬å›¾ä¹¦çš„æ”¶è—ä¿¡æ¯
+    public static final String USER_ALL_NOTE = BASE + "/v2/book/user/:name/annotations";//è·å–æŸä¸ªç”¨æˆ·çš„æ‰€æœ‰ç¬”è®°
+    public static final String USER_ONEBOOK_NOTE = BASE + "/v2/book/:id/annotations";//è·å–æŸæœ¬å›¾ä¹¦çš„æ‰€æœ‰ç¬”è®°
+    public static final String USER_ONENOTE_INFO = BASE + "/v2/book/annotation/:id";//è·å–æŸç¯‡ç¬”è®°çš„ä¿¡æ¯
+    public static final String USER_BOOK_CATALOG = BASE + "/v2/book/series/:id/books";//è·å–ä¸›ä¹¦ä¹¦ç›®ä¿¡æ¯
 }

@@ -4,6 +4,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+    <org.succlz123.doubanbooklog.support.xlistview.me.maxwin.view.XListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/wish_list_view"
+            android:cacheColorHint="#00000000"
+            android:dividerHeight="3dp">
+    </org.succlz123.doubanbooklog.support.xlistview.me.maxwin.view.XListView>
+
     <Button
             android:layout_width="100dp"
             android:layout_height="48dp"
