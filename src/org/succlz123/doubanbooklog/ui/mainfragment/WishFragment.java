@@ -66,7 +66,7 @@ public class WishFragment extends Fragment {
                 DbCollection dbCollection = WishFragment.this.dbObject.getCollections().get(position - listView.getHeaderViewsCount());//因为listview里有个头尾 所以用它来获取list里的第一个
                 Intent intent = new Intent(getActivity(), ContentActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("book_info", dbCollection);
+                bundle.putParcelable("book_info", dbCollection);
                 intent.putExtras(bundle);
                 startActivity(intent);
             }

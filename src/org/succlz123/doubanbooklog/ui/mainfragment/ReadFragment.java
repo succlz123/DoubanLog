@@ -66,7 +66,7 @@ public class ReadFragment extends Fragment {
                 DbCollection dbCollection = ReadFragment.this.dbObject.getCollections().get(position - listView.getHeaderViewsCount());
                 Intent intent = new Intent(getActivity(), ContentActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("book_info", dbCollection);
+                bundle.putParcelable("book_info", dbCollection);
                 intent.putExtras(bundle);
                 startActivity(intent);
             }
