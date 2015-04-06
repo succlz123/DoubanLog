@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="80dp">
+                android:layout_height="85dp">
 
     <ImageView
             android:layout_width="60dp"
@@ -43,11 +43,14 @@
             android:layout_below="@+id/annotation_item_name"
             android:layout_toRightOf="@+id/annotation_item_imageView"
             android:textSize="14sp"
-            android:textColor="@color/black"
-
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="10dp"
             android:maxLines="3"
             android:ellipsize="end" />
+
+        <View android:layout_width="match_parent"
+              android:layout_height="3dp"
+              android:layout_alignParentBottom="true"
+              android:background="@color/androidbase"/>
 </RelativeLayout>

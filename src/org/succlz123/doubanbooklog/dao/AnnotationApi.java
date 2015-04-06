@@ -10,9 +10,13 @@ import org.succlz123.doubanbooklog.support.http.JavaHttpClient;
  */
 public class AnnotationApi {
 
-    public static AnnotationObject getAnnotation(int id) {
-
+    public static AnnotationObject getAnnotation(int id,int start) {
         String url = ApiUrlHelper.USER_ONEBOOK_NOTE.replace(":id", Integer.toString(id));
+        url=url+"?start=0&order=collect";
+        if (start!=0){
+            url=url.replace("start=0","start="+Integer.toString(start));
+        }
+        url=url+"&page=0";
         String json = JavaHttpClient.getInstance().doGet(url, null, null);
         try {
             AnnotationObject annotationObject = AnnotationObject.parseJson(new JSONObject(json));

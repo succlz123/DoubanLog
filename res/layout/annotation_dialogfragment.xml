@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/basecolor">
+
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="57dp"
+                    android:background="@color/basebackground">
+        <ImageView android:layout_width="40dp"
+                   android:layout_height="40dp"
+                   android:id="@+id/annotation_dialog_img"
+                   android:layout_marginTop="7dp"
+                   android:layout_marginLeft="7dp"/>
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:id="@+id/annotation_dialog_time"
+                  android:layout_toRightOf="@+id/annotation_dialog_img"
+                  android:textSize="16sp"
+                  android:textColor="@color/white"
+                  android:layout_marginLeft="5dp"
+                  android:layout_marginTop="5dp"/>
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:id="@+id/annotation_dialog_name"
+                  android:layout_toRightOf="@+id/annotation_dialog_img"
+                  android:layout_below="@+id/annotation_dialog_time"
+                  android:textSize="16sp"
+                  android:textColor="@color/white"
+                  android:layout_marginLeft="5dp"/>
+        <ImageView android:layout_width="45dp"
+                   android:layout_height="45dp"
+                   android:id="@+id/annotation_dialog_share"
+                   android:layout_alignParentRight="true"
+                   android:layout_marginRight="7dp"/>
+    </RelativeLayout>
+
+    <ImageView android:layout_width="match_parent"
+               android:layout_height="8dp"
+               android:background="@drawable/xxxx"/>
+
+    <TextView android:layout_width="match_parent"
+              android:layout_height="20dp"
+              android:id="@+id/annotation_dialog_chapter"
+              android:layout_marginLeft="7dp"
+              android:layout_marginBottom="7dp"
+              android:layout_marginTop="5dp"
+              android:textSize="16sp"
+              android:textColor="@color/white"
+              android:singleLine="true"
+              android:ellipsize="end"/>
+
+        <ScrollView android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:background="@color/white">
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:orientation="vertical">
+                <TextView android:layout_width="match_parent"
+                          android:layout_height="match_parent"
+                          android:textSize="16sp"
+                          android:layout_margin="10dp"
+                          android:id="@+id/annotation_dialog_content"/>
+            </LinearLayout>
+        </ScrollView>
+
+</LinearLayout>

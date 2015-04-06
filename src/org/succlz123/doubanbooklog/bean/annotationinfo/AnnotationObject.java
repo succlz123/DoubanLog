@@ -44,12 +44,18 @@ public class AnnotationObject {
         return total;
     }
 
+    public int getItemCount(){
+        return annotationResult.size();
+    }
+
     public void setTotal(Integer total) {
         this.total = total;
     }
 
     public static AnnotationObject parseJson(JSONObject jsonObject) {
+
         AnnotationObject annotationObject = new AnnotationObject();
+
         Integer count = jsonObject.optInt("count");
         Integer start = jsonObject.optInt("start");
         Integer total = jsonObject.optInt("total");
@@ -64,12 +70,13 @@ public class AnnotationObject {
                 annotationResults.add(annotationResult);
             }
         }
+
         annotationObject.setAnnotationResult(annotationResults);
         annotationObject.setCount(count);
         annotationObject.setStart(start);
         annotationObject.setTotal(total);
+
         return annotationObject;
     }
-
 }
 

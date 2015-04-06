@@ -15,6 +15,7 @@ public class DbInfoApi {
     public static DbInfo getDbInfo(String token) {
         HashMap<String, String> header = new HashMap<String, String>();
         header.put("Authorization", "Bearer " + token);
+
         String json = JavaHttpClient.getInstance().doGet(ApiUrlHelper.USER_INFO, header, token);
         try {
             return DbInfo.parseJson(new JSONObject(json));

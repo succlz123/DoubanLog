@@ -62,8 +62,8 @@ public class ReadFragment extends Fragment {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                DbCollection dbCollection = ReadFragment.this.dbObject.getCollections().get(position-listView.getHeaderViewsCount());//因为listview里有个头尾 所以用它来获取list里的第一个
+                //position-1 因为listview里有个头尾 所以用它来获取list里的第一个
+                DbCollection dbCollection = ReadFragment.this.dbObject.getCollections().get(position - listView.getHeaderViewsCount());
                 Intent intent = new Intent(getActivity(), ContentActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("book_info", dbCollection);

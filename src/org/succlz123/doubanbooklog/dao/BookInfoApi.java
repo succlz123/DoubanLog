@@ -24,7 +24,6 @@ public class BookInfoApi {
         String url = ApiUrlHelper.USER_BOOK_ALL_INFO.replace(":name", Integer.toString(id));
         url = url + "?start=" + Integer.toString(refresh);
 
-
         if (status != null) {
             url = url + "&status=" + status;
         }

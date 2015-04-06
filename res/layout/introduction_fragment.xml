@@ -108,8 +108,8 @@
 
         </LinearLayout>
 
-        <View android:layout_height="1px"
-              android:background="@color/lightgrey"
+        <View android:layout_height="3dp"
+              android:background="@color/androidbase"
               android:layout_width="match_parent"
               android:layout_below="@+id/introduction_book_imageview"/>
 

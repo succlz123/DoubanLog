@@ -24,6 +24,8 @@ import org.succlz123.doubanbooklog.support.com.shamanland.fab.ShowHideOnScroll;
 import org.succlz123.doubanbooklog.support.xlistview.me.maxwin.view.XListView;
 import org.succlz123.doubanbooklog.ui.activity.SetAnnotationActivity;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -34,7 +36,9 @@ public class AnnotationFragment extends Fragment {
     private DbCollection dbCollection;
     private List<AnnotationResult> annotationResult;
     private Boolean canLoadMore;
-    private TextView maosimeiyou;
+    private TextView none;
+    private int xx;
+    private Boolean booleanLoadMore = false;
     private org.succlz123.doubanbooklog.support.xlistview.me.maxwin.view.XListView xListView;
     private org.succlz123.doubanbooklog.support.com.shamanland.fab.FloatingActionButton fab;
 
@@ -44,10 +48,10 @@ public class AnnotationFragment extends Fragment {
 
         Intent intent = getActivity().getIntent();
         dbCollection = (DbCollection) intent.getSerializableExtra("book_info");//
-        //上一个fragment传过来的数据 在这里进行接受
+        //上一个fragment传过来的数据 在这里进行接受 需要强制转换
 
         xListView = (XListView) view.findViewById(R.id.annotation_xlistview);
-        maosimeiyou = (TextView) view.findViewById(R.id.maosimeiyou);//根据返回的笔记total来提示用户是否有笔记 没有显示貌似没有
+        none = (TextView) view.findViewById(R.id.annotation_none);//根据返回的笔记total来提示用户是否有笔记 没有显示貌似没有
         fab = (FloatingActionButton) view.findViewById(R.id.annotation_fab);//浮动的imagebutton
         fab.setShadow(true);
         fab.setColor(Color.parseColor("#0097a7"));
@@ -69,8 +73,9 @@ public class AnnotationFragment extends Fragment {
         xListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-
+                AnnotationResult annotationResult = AnnotationFragment.this.annotationObject.getAnnotationResult().get(position - xListView.getHeaderViewsCount());
+                AnnotationDialogFragment annotationDialogFragment = AnnotationDialogFragment.newInstance(annotationResult);
+                annotationDialogFragment.show(getFragmentManager(), "");
             }
         });
         //xlistview的上下拉刷新
@@ -92,7 +97,8 @@ public class AnnotationFragment extends Fragment {
         @Override
         public int getCount() {
             if (annotationObject != null) {
-                return annotationObject.getTotal();//匿名内部类一进来就被调用 所以先判断是否为空
+                return annotationObject.getItemCount();
+                //匿名内部类一进来就被调用 所以先判断是否为空  getannotation  的返回值得 size 用total会数组越界
             } else {
                 return 0;
             }
@@ -125,7 +131,7 @@ public class AnnotationFragment extends Fragment {
             new ImageViewAsyncTask(imageView, annotationResults).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
             name.setText((position + 1) + ". " + annotationResults.getAuthor_user().getName());
             time.setText(annotationResults.getTime());
-            text.setText(annotationResults.getSummary());
+            text.setText(annotationResults.getContent());
             return convertView;
         }
     };
@@ -141,7 +147,7 @@ public class AnnotationFragment extends Fragment {
 
         @Override
         protected AnnotationObject doInBackground(Void... params) {
-            return AnnotationApi.getAnnotation(id);
+            return AnnotationApi.getAnnotation(id, 0);
         }
 
         @Override
@@ -149,18 +155,19 @@ public class AnnotationFragment extends Fragment {
             super.onPostExecute(result);
             AnnotationFragment.this.annotationObject = result;
             baseAdapter.notifyDataSetChanged();
+            reset();
+            xx = 0;
             if (result != null) {
                 canLoadMore = result.getAnnotationResult().size() < result.getTotal().intValue();
                 xListView.setPullLoadEnable(canLoadMore);
             }
             if (result.getTotal() == 0) {
-                maosimeiyou.setVisibility(View.VISIBLE);
+                none.setVisibility(View.VISIBLE);
             }
         }
     }
 
     private class ImageViewAsyncTask extends AsyncTask<Void, Void, Bitmap> {
-        private String xx;
         private ImageView imageView;
         private AnnotationResult annotationResult;
 
@@ -187,12 +194,57 @@ public class AnnotationFragment extends Fragment {
         }
     }
 
-    private void Refresh() {
+    private class LoadMoreAsyncTask extends AsyncTask<Void, Void, AnnotationObject> {
+        private int start;
+        private int id;
 
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            start = xx + 10;
+            id = dbCollection.getBook_id();
+        }
+
+        @Override
+        protected AnnotationObject doInBackground(Void... params) {
+            return AnnotationApi.getAnnotation(id, start);
+        }
+
+        @Override
+        protected void onPostExecute(AnnotationObject aVoid) {
+            super.onPostExecute(aVoid);
+
+            AnnotationFragment.this.annotationObject.getAnnotationResult().addAll(aVoid.getAnnotationResult());
+            baseAdapter.notifyDataSetChanged();
+            reset();
+            if (annotationResult.size() < 20 || annotationObject.getStart() >= annotationObject.getTotal()) {
+                xListView.setPullLoadEnable(false);
+                booleanLoadMore = false;
+            } else {
+                xx = start;
+            }
+        }
+    }
+
+    private void reset() {
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy年MM月dd日    HH:mm:ss     ");
+        Date curDate = new Date(System.currentTimeMillis());//获取当前时间
+        String str = formatter.format(curDate);
+
+        xListView.stopRefresh();
+        xListView.stopLoadMore();
+        xListView.setRefreshTime(str);
+    }
+
+    private void Refresh() {
+        new AnnotationAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     }
 
     private void LoadMore() {
+        if (!booleanLoadMore) {
+            new LoadMoreAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
 
+        }
     }
-
 }

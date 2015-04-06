@@ -1,11 +1,13 @@
 package org.succlz123.doubanbooklog.bean.annotationinfo;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import org.json.JSONObject;
 
 /**
  * Created by fashi on 2015/4/4.
  */
-public class AuthorUser {
+public class AuthorUser implements Parcelable {
 
     private String name;
     private Boolean is_banned;
@@ -92,4 +94,43 @@ public class AuthorUser {
 
         return authorUser;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.name);
+        dest.writeValue(this.is_banned);
+        dest.writeString(this.url);
+        dest.writeString(this.avatar);
+        dest.writeValue(this.uid);
+        dest.writeString(this.alt);
+        dest.writeString(this.large_avatar);
+    }
+
+    public AuthorUser() {
+    }
+
+    private AuthorUser(Parcel in) {
+        this.name = in.readString();
+        this.is_banned = (Boolean) in.readValue(Boolean.class.getClassLoader());
+        this.url = in.readString();
+        this.avatar = in.readString();
+        this.uid = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.alt = in.readString();
+        this.large_avatar = in.readString();
+    }
+
+    public static final Parcelable.Creator<AuthorUser> CREATOR = new Parcelable.Creator<AuthorUser>() {
+        public AuthorUser createFromParcel(Parcel source) {
+            return new AuthorUser(source);
+        }
+
+        public AuthorUser[] newArray(int size) {
+            return new AuthorUser[size];
+        }
+    };
 }

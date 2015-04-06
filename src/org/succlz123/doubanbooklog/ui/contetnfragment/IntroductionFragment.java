@@ -64,7 +64,14 @@ public class IntroductionFragment extends Fragment {
         ratingbar.setProgress(dbCollection.getBook().getRating().getAverage());
         numraters.setText("综合评分: " + "" + dbCollection.getBook().getRating().getAverage() + " (" + "" + dbCollection.getBook().getRating().getNumRaters() + "人评价)");
 
-        review_status.setText("我的阅读状态: " + dbCollection.getStatus().toString());
+        if(dbCollection.getStatus().toString().equals("reading")){
+            review_status.setText("我的阅读状态: 在读");
+        }else if(dbCollection.getStatus().toString().equals("read")){
+            review_status.setText("我的阅读状态: 已读");
+        }else if(dbCollection.getStatus().toString().equals("wish")){
+            review_status.setText("我的阅读状态: 想读");
+        }
+
         review_time.setText("更新时间: " + dbCollection.getUpdated().toString());
 //        review_ratingbar.setMax();
 

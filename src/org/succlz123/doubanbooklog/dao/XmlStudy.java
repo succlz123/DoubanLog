@@ -62,12 +62,12 @@
 //
 //                        } else if ("db:attribute".equals(nodeName)) {
 //
-////                            bookInfo.setSummary(xmlPullParser.getAttributeValue(null, "name"));
+////                            bookInfo.setContent(xmlPullParser.getAttributeValue(null, "name"));
 //                            if ("author-intro".equals(xmlPullParser.getAttributeValue(null, "name"))) {
 //
 //                            }
 //
-////                                bookInfo.setSummary(xmlPullParser.nextText());
+////                                bookInfo.setContent(xmlPullParser.nextText());
 //
 //                        }
 //                        break;

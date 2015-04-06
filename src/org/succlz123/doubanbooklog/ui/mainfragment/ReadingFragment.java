@@ -155,7 +155,7 @@ public class ReadingFragment extends Fragment {
                                 @Override
                                 public void run() {
                                     Object tagObject = imageView.getTag();
-                                    if (tagObject == dbCollection) {
+                                    if (tagObject == dbCollection&&bitmap!=null) {
                                         imageView.setImageBitmap(bitmap);
                                         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
                                         ReadingFragment.this.lruCache.put(dbCollection, bitmap);
