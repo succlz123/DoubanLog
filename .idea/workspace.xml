@@ -35,35 +35,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14bec9cd-8d28-4529-9b61-7c157ad0d285" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/ui/leftfrag/AboutFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/ui/leftfrag/CommentFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/ui/leftfrag/MyFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/ui/leftfrag/NotesFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/ui/leftfrag/TagFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/values/color.xml" />
-      <change type="DELETED" beforePath="D:\Source Code\github\DoubanBookLog\src\org\succlz123\doubanbooklog\ui\mainFrag\WishFrag.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Source Code\github\DoubanBookLog\src\org\succlz123\doubanbooklog\ui\myActivity\MyAct.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Source Code\github\DoubanBookLog\src\org\succlz123\doubanbooklog\ui\myActivity\ScanAct.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/ui/contetnfragment/AnnotationDialogFragment.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/ui/contetnfragment/AnnotationDialogFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/ui/contetnfragment/AnnotationFragment.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/ui/contetnfragment/AnnotationFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/annotationinfo/AnnotationResult.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/annotationinfo/AnnotationResult.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/annotationinfo/AuthorUser.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/annotationinfo/AuthorUser.java" />
-      <change type="MODIFICATION" beforePath="D:\Source Code\github\DoubanBookLog\src\org\succlz123\doubanbooklog\bean\bookinfo\Book.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo/Book.java" />
-      <change type="MODIFICATION" beforePath="D:\Source Code\github\DoubanBookLog\src\org\succlz123\doubanbooklog\bean\bookinfo\BookImage.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo/BookImage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/dao/BookInfoApi.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/dao/BookInfoApi.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/ui/activity/ContentActivity.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/ui/activity/ContentActivity.java" />
-      <change type="MODIFICATION" beforePath="D:\Source Code\github\DoubanBookLog\src\org\succlz123\doubanbooklog\bean\bookinfo\DbCollection.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo/DbCollection.java" />
-      <change type="MODIFICATION" beforePath="D:\Source Code\github\DoubanBookLog\src\org\succlz123\doubanbooklog\bean\bookinfo\DbObject.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo/DbObject.java" />
-      <change type="MODIFICATION" beforePath="D:\Source Code\github\DoubanBookLog\src\org\succlz123\doubanbooklog\bean\bookinfo\GlobalRating.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo/GlobalRating.java" />
-      <change type="MODIFICATION" beforePath="D:\Source Code\github\DoubanBookLog\src\org\succlz123\doubanbooklog\bean\bookinfo\GlobalTag.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo/GlobalTag.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/ui/contetnfragment/IntroductionFragment.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/ui/contetnfragment/IntroductionFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/ui/activity/MyActivity.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/ui/activity/MyActivity.java" />
-      <change type="MODIFICATION" beforePath="D:\Source Code\github\DoubanBookLog\src\org\succlz123\doubanbooklog\bean\bookinfo\MyRating.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo/MyRating.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/ui/contetnfragment/ReviewsDialogFragment.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/ui/contetnfragment/ReviewsDialogFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/ui/mainfragment/ReadFragment.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/ui/mainfragment/ReadFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/ui/mainfragment/ReadingFragment.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/ui/mainfragment/ReadingFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/ui/contetnfragment/ReviewsFragment.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/ui/contetnfragment/ReviewsFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/reviewsinfo/ReviewsRating.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/reviewsinfo/ReviewsRating.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/reviewsinfo/ReviewsResult.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/reviewsinfo/ReviewsResult.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/reviewsinfo/ReviewsUser.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/reviewsinfo/ReviewsUser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/ui/mainfragment/WishFragment.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/ui/mainfragment/WishFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="D:\Source Code\github\DoubanBookLog\src\org\succlz123\doubanbooklog\bean\bookinfo3\Book.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo34/Book.java" />
+      <change type="MOVED" beforePath="D:\Source Code\github\DoubanBookLog\src\org\succlz123\doubanbooklog\bean\bookinfo3\BookImage.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo34/BookImage.java" />
+      <change type="MOVED" beforePath="D:\Source Code\github\DoubanBookLog\src\org\succlz123\doubanbooklog\bean\bookinfo3\DbCollection.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo34/DbCollection.java" />
+      <change type="MOVED" beforePath="D:\Source Code\github\DoubanBookLog\src\org\succlz123\doubanbooklog\bean\bookinfo3\DbObject.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo34/DbObject.java" />
+      <change type="MOVED" beforePath="D:\Source Code\github\DoubanBookLog\src\org\succlz123\doubanbooklog\bean\bookinfo3\GlobalRating.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo34/GlobalRating.java" />
+      <change type="MOVED" beforePath="D:\Source Code\github\DoubanBookLog\src\org\succlz123\doubanbooklog\bean\bookinfo3\GlobalTag.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo34/GlobalTag.java" />
+      <change type="MOVED" beforePath="D:\Source Code\github\DoubanBookLog\src\org\succlz123\doubanbooklog\bean\bookinfo3\MyRating.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo34/MyRating.java" />
     </list>
     <ignored path="DoubanBookLog.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -267,6 +254,72 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doubanbooklog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DoubanBookLog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DoubanBookLog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doubanbooklog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bean" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DoubanBookLog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DoubanBookLog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doubanbooklog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bean" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bookinfo34" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DoubanBookLog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DoubanBookLog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -291,9 +344,9 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -429,74 +482,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="myFilePath" />
-      <option name="GLUE" />
-      <option name="myNameFilter" />
-      <option name="myGeneratedName" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
-      <option name="BCName" value="" />
-      <option name="IOSSimulatorSdkPath" value="" />
-      <option name="adlOptions" value="" />
-      <option name="airProgramParameters" value="" />
-      <option name="appDescriptorForEmulator" value="Android" />
-      <option name="debugTransport" value="USB" />
-      <option name="debuggerSdkRaw" value="BC SDK" />
-      <option name="emulator" value="NexusOne" />
-      <option name="emulatorAdlOptions" value="" />
-      <option name="fastPackaging" value="true" />
-      <option name="fullScreenHeight" value="0" />
-      <option name="fullScreenWidth" value="0" />
-      <option name="launchUrl" value="false" />
-      <option name="launcherParameters">
-        <LauncherParameters>
-          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
-          <option name="launcherType" value="OSDefault" />
-          <option name="newPlayerInstance" value="false" />
-          <option name="playerPath" value="FlashPlayerDebugger.exe" />
-        </LauncherParameters>
-      </option>
-      <option name="mobileRunTarget" value="Emulator" />
-      <option name="moduleName" value="" />
-      <option name="overriddenMainClass" value="" />
-      <option name="overriddenOutputFileName" value="" />
-      <option name="overrideMainClass" value="false" />
-      <option name="runTrusted" value="true" />
-      <option name="screenDpi" value="0" />
-      <option name="screenHeight" value="0" />
-      <option name="screenWidth" value="0" />
-      <option name="url" value="http://" />
-      <option name="usbDebugPort" value="7936" />
-      <method />
-    </configuration>
-    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
-      <option name="BCName" value="" />
-      <option name="launcherParameters">
-        <LauncherParameters>
-          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
-          <option name="launcherType" value="OSDefault" />
-          <option name="newPlayerInstance" value="false" />
-          <option name="playerPath" value="FlashPlayerDebugger.exe" />
-        </LauncherParameters>
-      </option>
-      <option name="moduleName" value="" />
-      <option name="trusted" value="true" />
-      <method />
-    </configuration>
     <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -511,16 +496,6 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <method />
-    </configuration>
-    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
-      <module name="" />
-      <setting name="vmparams" value="" />
-      <setting name="cmdLine" value="run-app" />
-      <setting name="depsClasspath" value="false" />
-      <setting name="passParentEnv" value="true" />
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <setting name="launchBrowser" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -550,21 +525,12 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
-      <method />
-    </configuration>
-    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -593,15 +559,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <pass-parent-envs>true</pass-parent-envs>
-      <envs />
       <method />
     </configuration>
     <configuration default="false" name="DoubanBookLog" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -721,7 +678,13 @@
       <option name="project" value="LOCAL" />
       <updated>1428338555582</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="22">
+      <created>1428409631205</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1428409631205</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -742,32 +705,32 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994923" sideWeight="0.4969605" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31832796" sideWeight="0.4399696" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23480242" sideWeight="0.52072537" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994923" sideWeight="0.50911856" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.357022" sideWeight="0.49392098" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3248731" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.6159052" sideWeight="0.49088147" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6157556" sideWeight="0.49088147" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4822335" sideWeight="0.37082067" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2256839" sideWeight="0.4792746" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2907855" sideWeight="0.4792746" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45516074" sideWeight="0.6854103" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49746192" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1793313" sideWeight="0.51265824" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44500846" sideWeight="0.4863222" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31979695" sideWeight="0.4399696" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49746192" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44500846" sideWeight="0.4863222" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3248731" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3604061" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -820,7 +783,8 @@
     <MESSAGE value="学习姿势123" />
     <MESSAGE value="123" />
     <MESSAGE value="parcelable" />
-    <option name="LAST_COMMIT_MESSAGE" value="parcelable" />
+    <MESSAGE value="22" />
+    <option name="LAST_COMMIT_MESSAGE" value="22" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -858,7 +822,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo/Book.java">
+    <entry file="file://$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo34/Book.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -914,7 +878,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo/BookImage.java">
+    <entry file="file://$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo34/BookImage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26296958">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
@@ -942,7 +906,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo/DbCollection.java">
+    <entry file="file://$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo34/DbCollection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26296958">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
@@ -999,7 +963,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo/Book.java">
+    <entry file="file://$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo34/Book.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.2021467">
           <caret line="350" column="32" selection-start-line="350" selection-start-column="32" selection-end-line="350" selection-end-column="32" />
