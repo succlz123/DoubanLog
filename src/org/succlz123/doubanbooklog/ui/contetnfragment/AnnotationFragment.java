@@ -16,7 +16,7 @@ import android.widget.TextView;
 import org.succlz123.doubanbooklog.R;
 import org.succlz123.doubanbooklog.bean.annotationinfo.AnnotationObject;
 import org.succlz123.doubanbooklog.bean.annotationinfo.AnnotationResult;
-import org.succlz123.doubanbooklog.bean.bookinfo.DbCollection;
+import org.succlz123.doubanbooklog.bean.bookinfo3.DbCollection;
 import org.succlz123.doubanbooklog.dao.AnnotationApi;
 import org.succlz123.doubanbooklog.dao.GetBmApi;
 import org.succlz123.doubanbooklog.support.com.shamanland.fab.FloatingActionButton;

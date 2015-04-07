@@ -12,8 +12,8 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import org.succlz123.doubanbooklog.R;
-import org.succlz123.doubanbooklog.bean.bookinfo.DbCollection;
-import org.succlz123.doubanbooklog.bean.bookinfo.GlobalTag;
+import org.succlz123.doubanbooklog.bean.bookinfo3.DbCollection;
+import org.succlz123.doubanbooklog.bean.bookinfo3.GlobalTag;
 import org.succlz123.doubanbooklog.dao.GetBmApi;
 
 import java.util.List;
