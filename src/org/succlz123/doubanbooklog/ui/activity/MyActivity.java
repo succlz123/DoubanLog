@@ -19,7 +19,7 @@ import org.succlz123.doubanbooklog.bean.DbAccount;
 import org.succlz123.doubanbooklog.bean.DbInfo;
 import org.succlz123.doubanbooklog.dao.DbInfoApi;
 import org.succlz123.doubanbooklog.dao.GetBmApi;
-import org.succlz123.doubanbooklog.ui.leftfrag.*;
+import org.succlz123.doubanbooklog.ui.leftfragment.*;
 
 import java.util.ArrayList;
 
@@ -35,7 +35,9 @@ public class MyActivity extends FragmentActivity {
     private Button toolbarbtn;
     private int position;
 
-    NotesFragment notesFragment = new NotesFragment();
+
+
+     NotesFragment notesFragment = new  NotesFragment();
     CommentFragment commentFragment = new CommentFragment();
     TagFragment tagFragment = new TagFragment();
     AboutFragment aboutFragment = new AboutFragment();

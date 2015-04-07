@@ -1,4 +1,4 @@
-package org.succlz123.doubanbooklog.ui.leftfrag;
+package org.succlz123.doubanbooklog.ui.leftfragment;
 
 
 import android.content.Context;

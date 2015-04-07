@@ -57,7 +57,7 @@ public class ReviewsFragment extends Fragment {
         });
 
 //        new ReviewsAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-        new ReviewsAsyncTask(dbCollection.getBook_id(), 0).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        new ReviewsAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
 
 
         xListView.setOnTouchListener(new ShowHideOnScroll(fab));//把xlistview和浮动imagebutton组合
@@ -144,23 +144,18 @@ public class ReviewsFragment extends Fragment {
     };
 
     private class ReviewsAsyncTask extends AsyncTask<Void, Void, ReviewsObject> {
-
         private int id;
-        private int start;
-
-        public ReviewsAsyncTask(int id, int start) {
-            this.id = id;
-            this.start = start;
-        }
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
+            id = dbCollection.getBook_id();
         }
+
 
         @Override
         protected ReviewsObject doInBackground(Void... params) {
-            return ReviewsApi.GetReveiws(id, start);
+            return ReviewsApi.GetReveiws(id,0);
         }
 
         @Override
@@ -169,15 +164,6 @@ public class ReviewsFragment extends Fragment {
             reviewsObject = aVoid;
             baseAdapter.notifyDataSetChanged();
             reset();
-            loadMoreBoolean = (aVoid.getTotal() <= aVoid.getStart());
-            if(loadMoreBoolean||aVoid.getStart()<20) {
-                xListView.setPullLoadEnable(false);
-            }else if(!loadMoreBoolean){
-                xListView.setPullLoadEnable(true);
-            }
-//            if(aVoid.ge){
-//                reset();
-//            }
         }
     }
 
@@ -220,11 +206,11 @@ public class ReviewsFragment extends Fragment {
 
 
     private void reFresh() {
-        new ReviewsAsyncTask(dbCollection.getBook_id(), 0).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        new ReviewsAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     }
 
     private void loadMore() {
-        start = start + 20;
-        new ReviewsAsyncTask(dbCollection.getBook_id(), start).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+
+        new ReviewsAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     }
 }
