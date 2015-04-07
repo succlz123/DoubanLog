@@ -35,9 +35,7 @@ public class MyActivity extends FragmentActivity {
     private Button toolbarbtn;
     private int position;
 
-
-
-     NotesFragment notesFragment = new  NotesFragment();
+    NotesFragment notesFragment = new NotesFragment();
     CommentFragment commentFragment = new CommentFragment();
     TagFragment tagFragment = new TagFragment();
     AboutFragment aboutFragment = new AboutFragment();

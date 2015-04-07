@@ -20,7 +20,6 @@ import org.succlz123.doubanbooklog.ui.mainfragment.WishFragment;
  */
 public class MyFragment extends Fragment {
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
