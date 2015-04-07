@@ -34,7 +34,7 @@ public class ContentActivity extends FragmentActivity {
         setContentView(R.layout.content_activity);
 
         Intent intent = this.getIntent();
-        dbCollection = (DbCollection) intent.getSerializableExtra("book_info");
+        dbCollection = (DbCollection) intent.getParcelableExtra("book_info");
 
         String title=dbCollection.getBook().getTitle();
         mToolbar = (Toolbar) findViewById(R.id.toolbar);

@@ -12,9 +12,9 @@ public class AnnotationResult implements Parcelable {
     private String chapter;
     private AuthorUser author_user;
     private String content;
-    private Integer book_id;
+    private int book_id;
     private String time;
-    private Integer id;
+    private int id;
 
     public String getChapter() {
         return chapter;
@@ -40,11 +40,11 @@ public class AnnotationResult implements Parcelable {
         this.content = content;
     }
 
-    public Integer getBook_id() {
+    public int getBook_id() {
         return book_id;
     }
 
-    public void setBook_id(Integer book_id) {
+    public void setBook_id(int book_id) {
         this.book_id = book_id;
     }
 
@@ -56,11 +56,11 @@ public class AnnotationResult implements Parcelable {
         this.time = time;
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -70,14 +70,13 @@ public class AnnotationResult implements Parcelable {
 
         String chapter = jsonObject.optString("chapter");
         String content = jsonObject.optString("content");
-        Integer book_id = jsonObject.optInt("book_id");
+        int book_id = jsonObject.optInt("book_id");
         String time = jsonObject.optString("time");
-        Integer id = jsonObject.optInt("id");
+        int id = jsonObject.optInt("id");
         {
             JSONObject jsonObject1 = jsonObject.optJSONObject("author_user");
             AuthorUser authorUser = AuthorUser.parseJson(jsonObject1);
             annotationResult.setAuthor_user(authorUser);
-
         }
         annotationResult.setChapter(chapter);
         annotationResult.setContent(content);
@@ -85,6 +84,9 @@ public class AnnotationResult implements Parcelable {
         annotationResult.setTime(time);
         annotationResult.setId(id);
         return annotationResult;
+    }
+
+    public AnnotationResult() {
     }
 
     @Override
@@ -95,26 +97,23 @@ public class AnnotationResult implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.chapter);
-        dest.writeSerializable(this.author_user);
+        dest.writeParcelable(this.author_user, 0);
         dest.writeString(this.content);
-        dest.writeValue(this.book_id);
+        dest.writeInt(this.book_id);
         dest.writeString(this.time);
-        dest.writeValue(this.id);
-    }
-
-    public AnnotationResult() {
+        dest.writeInt(this.id);
     }
 
     private AnnotationResult(Parcel in) {
         this.chapter = in.readString();
-        this.author_user = (AuthorUser) in.readSerializable();
+        this.author_user = in.readParcelable(getClass().getClassLoader());
         this.content = in.readString();
-        this.book_id = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.book_id = in.readInt();
         this.time = in.readString();
-        this.id = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.id = in.readInt();
     }
 
-    public static final Parcelable.Creator<AnnotationResult> CREATOR = new Parcelable.Creator<AnnotationResult>() {
+    public static final Creator<AnnotationResult> CREATOR = new Creator<AnnotationResult>() {
         public AnnotationResult createFromParcel(Parcel source) {
             return new AnnotationResult(source);
         }

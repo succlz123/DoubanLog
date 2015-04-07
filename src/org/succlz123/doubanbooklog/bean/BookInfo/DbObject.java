@@ -1,7 +1,6 @@
-package org.succlz123.doubanbooklog.bean.BookInfo;
+package org.succlz123.doubanbooklog.bean.bookinfo;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -12,13 +11,13 @@ import java.util.List;
  */
 public class DbObject {
 
-    private int count;//Ò»´Î·µ»ØµÄÊé¼®ĞÅÏ¢ÊıÁ¿ Ä¬ÈÏ20
+    private int count;//è¿”å›å›¾ä¹¦ä¸ªæ•° é»˜è®¤æœ€å¤š20
     private int start;//
     private int total;//
-    private List<DbCollection> collections;//·µ»Ø»ØÀ´µÄÊé¼®(Ä¬ÈÏ20±¾)µÄĞÅÏ¢ÁĞ±í
+    private List<DbCollection> collections;//è¿”å›çš„æ‰€æœ‰å›¾ä¹¦ä¿¡æ¯
 
-    public int getCount() {
-        return count;
+    public int getItemCount() {
+        return collections.size();
     }
 
     public void setCount(int count) {
@@ -49,34 +48,37 @@ public class DbObject {
         this.collections = collections;
     }
 
+    public void add(DbObject object) {
+        this.collections.addAll(0, object.getCollections());
+    }
+
+    public void addOld(DbObject object) {
+        this.collections.addAll(object.getCollections());
+    }
+
     public static DbObject parseJson(JSONObject object) {
+        DbObject dbObject = new DbObject();
 
-        try {
-            DbObject dbObject = new DbObject();
+        Integer count = object.optInt("count");
+        Integer start = object.optInt("start");
+        Integer total = object.optInt("total");
 
-            Integer count = object.getInt("count");
-            Integer start = object.getInt("start");
-            Integer total = object.getInt("total");
-
-            JSONArray collectionsJSOArray = object.optJSONArray("collections");
+        JSONArray collectionsJSOArray = object.optJSONArray("collections");
+        if (collectionsJSOArray != null) {
             List<DbCollection> collections = new ArrayList<DbCollection>();
             for (int i = 0; i < collectionsJSOArray.length(); i++) {
-                JSONObject jsonObject = collectionsJSOArray.getJSONObject(i);
+                JSONObject jsonObject = collectionsJSOArray.optJSONObject(i);
                 DbCollection collection = DbCollection.parseJson(jsonObject);
                 if (collection != null) {
                     collections.add(collection);
                 }
             }
-
-            dbObject.setCount(count);
-            dbObject.setStart(start);
-            dbObject.setTotal(total);
             dbObject.setCollections(collections);
-
-            return dbObject;
-        } catch (JSONException e) {
-            e.printStackTrace();
         }
-        return null;
+
+        dbObject.setCount(count);
+        dbObject.setStart(start);
+        dbObject.setTotal(total);
+        return dbObject;
     }
 }

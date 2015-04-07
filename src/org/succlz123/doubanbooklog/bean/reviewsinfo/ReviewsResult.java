@@ -1,13 +1,13 @@
 package org.succlz123.doubanbooklog.bean.reviewsinfo;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import org.json.JSONObject;
-
-import java.io.Serializable;
 
 /**
  * Created by fashi on 2015/4/6.
  */
-public class ReviewsResult implements Serializable{
+public class ReviewsResult implements Parcelable {
 
     private ReviewsRating reviewsRating;
     private int useful_count;
@@ -135,4 +135,49 @@ public class ReviewsResult implements Serializable{
 
         return reviewsResult;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeParcelable(this.reviewsRating,0);
+        dest.writeInt(this.useful_count);
+        dest.writeString(this.sharing_url);
+        dest.writeString(this.title);
+        dest.writeString(this.url);
+        dest.writeString(this.text);
+        dest.writeString(this.create_time);
+        dest.writeParcelable(this.reviewsUser, 0);
+        dest.writeInt(this.vote_status);
+        dest.writeInt(this.useless_count);
+    }
+
+    public ReviewsResult() {
+    }
+
+    private ReviewsResult(Parcel in) {
+        this.reviewsRating = (ReviewsRating) in.readSerializable();
+        this.useful_count = in.readInt();
+        this.sharing_url = in.readString();
+        this.title = in.readString();
+        this.url = in.readString();
+        this.text = in.readString();
+        this.create_time = in.readString();
+        this.reviewsUser = in.readParcelable(ReviewsUser.class.getClassLoader());
+        this.vote_status = in.readInt();
+        this.useless_count = in.readInt();
+    }
+
+    public static final Parcelable.Creator<ReviewsResult> CREATOR = new Parcelable.Creator<ReviewsResult>() {
+        public ReviewsResult createFromParcel(Parcel source) {
+            return new ReviewsResult(source);
+        }
+
+        public ReviewsResult[] newArray(int size) {
+            return new ReviewsResult[size];
+        }
+    };
 }

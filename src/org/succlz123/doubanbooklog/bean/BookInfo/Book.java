@@ -1,7 +1,8 @@
-package org.succlz123.doubanbooklog.bean.BookInfo;
+package org.succlz123.doubanbooklog.bean.bookinfo;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -10,30 +11,30 @@ import java.util.List;
 /**
  * Created by fashi on 2015/4/1.
  */
-public class Book {
+public class Book implements Parcelable {
 
-    private GlobalRating rating;//´ó¼ÒµÄÆÀ¼Û
-    private String subtitle;//Êé¼®¸±±êÌâ
-    private List<String> author;//Êé¼®×÷ÕßÁÐ±í
-    private String pubdate;//³ö°æÈÕÆÚ
-    private List<GlobalTag> tags;//´ó¼ÒµÄ±êÇ©ÁÐ±í
-    private String origin_title;//²»ÏþµÃÊ²Ã´¶«Î÷ Ä¬ÈÏ¿Õ
-    private String image;//Êé¼®·âÃæ Ä¬ÈÏ·µ»ØµÄÊÇ·âÃæÖÐÍ¼
-    private String binding;//×°Ö¡
-    private List<String> translator;//ÒëÕßÁÐ±í
-    private String catalog;//Ä¿Â¼
-    private int pages;//Ò³Êý
-    private BookImage images;//Êé¼®·âÃæ
-    private String alt;//Êé¼®Ö÷Ò³
-    private int publisher;//Êé¼®ÔÚ¶¹°êµÄid
-    private int isbn10;//Êé¼®ÔÚisbn10±àºÅ
-    private int isbn13;//Êé¼®ÔÚisbn13±àºÅ Ä¬ÈÏºÃÏñÏÔÊ¾isbn13
-    private String title;//Êé¼®±êÌâ
-    private String url;//Êé¼®ÔÚ¶¹°êapiµÄµØÖ·
-    private String alt_title;//²»ÏþµÃÊ²Ã´¶«Î÷ Ä¬ÈÏ¿Õ
-    private String author_intro;//×÷Õß¼ò½é
-    private String summary;//Êé¼®¼ò½é
-    private double price;//Êé¼®¶¨¼Û
+    private GlobalRating rating;//????????
+    private String subtitle;//?é¼®??????
+    private List<String> author;//?é¼®?????Ð±?
+    private String pubdate;//????????
+    private List<GlobalTag> tags;//???????Ð±?
+    private String origin_title;//???????????? ????
+    private String image;//?é¼®???? ???????????????
+    private String binding;//??
+    private List<String> translator;//?????Ð±?
+    private String catalog;//??
+    private int pages;//???
+    private BookImage images;//?é¼®????
+    private String alt;//?é¼®???
+    private String publisher;//?é¼®??????id
+    private String isbn10;//?é¼®??isbn10???
+    private String isbn13;//?é¼®??isbn13??? ?????????isbn13
+    private String title;//?é¼®????
+    private String url;//?é¼®?????api????
+    private String alt_title;//???????????? ????
+    private String author_intro;//??????
+    private String summary;//?é¼®???
+    private String price;//?é¼®????
 
     public GlobalRating getRating() {
         return rating;
@@ -139,27 +140,27 @@ public class Book {
         this.alt = alt;
     }
 
-    public int getPublisher() {
+    public String getPublisher() {
         return publisher;
     }
 
-    public void setPublisher(int publisher) {
+    public void setPublisher(String publisher) {
         this.publisher = publisher;
     }
 
-    public int getIsbn10() {
+    public String getIsbn10() {
         return isbn10;
     }
 
-    public void setIsbn10(int isbn10) {
+    public void setIsbn10(String isbn10) {
         this.isbn10 = isbn10;
     }
 
-    public int getIsbn13() {
+    public String getIsbn13() {
         return isbn13;
     }
 
-    public void setIsbn13(int isbn13) {
+    public void setIsbn13(String isbn13) {
         this.isbn13 = isbn13;
     }
 
@@ -203,107 +204,175 @@ public class Book {
         this.summary = summary;
     }
 
-    public double getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
     public static Book parseJson(JSONObject object) {
-        try {
-            Book book = new Book();
+        Book book = new Book();
 
-            {
-                JSONObject jsonObject = new JSONObject("rating");
-                GlobalRating globalRating = GlobalRating.parseJson(jsonObject);
-                book.setRating(globalRating);
-            }
-
-            String subtitle = object.getString("subtitle");
-
-            {
-                JSONArray authorJSONArray = object.getJSONArray("author");
-                List<String> collections = new ArrayList<String>();
-                for (int i = 0; i < authorJSONArray.length(); i++) {
-                    String result = authorJSONArray.getString(i);
-                    collections.add(result);
-                }
-                book.setAuthor(collections);
-            }
-
-            String pubdate = object.getString("pudate");
-
-            {
-                JSONArray tagsJSONArray = object.getJSONArray("tags");
-                List<GlobalTag> collections = new ArrayList<GlobalTag>();
-                for (int i = 0; i < tagsJSONArray.length(); i++) {
-                    JSONObject jsonObject = tagsJSONArray.getJSONObject(i);
-                    GlobalTag globalTag = GlobalTag.parseJson(jsonObject);
-                    if (globalTag != null) {
-                        collections.add(globalTag);
-                    }
-                }
-                book.setTags(collections);
-            }
-
-            String origin_title = object.getString("origin_title");
-            String image = object.getString("image");
-            String binding = object.getString("binding");
-
-            {
-                JSONArray translatorJSONArray = object.getJSONArray("translator");
-                List<String> collections = new ArrayList<String>();
-                for (int i = 0; i < translatorJSONArray.length(); i++) {
-                    String result = translatorJSONArray.getString(i);
-                    collections.add(result);
-                }
-                book.setTranslator(collections);
-            }
-
-            String catalog = object.getString("catalog");
-            Integer pages = object.getInt("pages");
-
-            {
-                JSONObject jsonObject = new JSONObject("images");
-                BookImage bookImage = BookImage.parseJson(jsonObject);
-                book.setImages(bookImage);
-            }
-
-            String alt = object.getString("alt");
-            Integer publisher = object.getInt("publisher");
-            Integer isbn10 = object.getInt("isbn10");
-            Integer isbn13 = object.getInt("isbn13");
-            String title = object.getString("title");
-            String url = object.getString("url");
-            String alt_title = object.getString("alt_title");
-            String author_intro = object.getString("author_intro");
-            String summary = object.getString("summary");
-            Double price = object.getDouble("price");
-
-            book.setSubtitle(subtitle);
-            book.setPubdate(pubdate);
-            book.setOrigin_title(origin_title);
-            book.setImage(image);
-            book.setBinding(binding);
-            book.setCatalog(catalog);
-            book.setPages(pages);
-            book.setAlt(alt);
-            book.setPublisher(publisher);
-            book.setIsbn10(isbn10);
-            book.setIsbn13(isbn13);
-            book.setTitle(title);
-            book.setUrl(url);
-            book.setAlt_title(alt_title);
-            book.setAuthor_intro(author_intro);
-            book.setSummary(summary);
-            book.setPrice(price);
-
-            return book;
-        } catch (JSONException e) {
-            e.printStackTrace();
+        {
+            JSONObject jsonObject = object.optJSONObject("rating");
+            GlobalRating globalRating = GlobalRating.parseJson(jsonObject);
+            book.setRating(globalRating);
         }
-        return null;
+
+        String subtitle = object.optString("subtitle");
+
+        {
+            JSONArray authorJSONArray = object.optJSONArray("author");
+            List<String> collections = new ArrayList<String>();
+            for (int i = 0; i < authorJSONArray.length(); i++) {
+                String result = authorJSONArray.optString(i);
+                collections.add(result);
+            }
+            book.setAuthor(collections);
+        }
+
+        String pubdate = object.optString("pudate");
+
+        {
+            JSONArray tagsJSONArray = object.optJSONArray("tags");
+            List<GlobalTag> collections = new ArrayList<GlobalTag>();
+            for (int i = 0; i < tagsJSONArray.length(); i++) {
+                JSONObject jsonObject = tagsJSONArray.optJSONObject(i);
+                GlobalTag globalTag = GlobalTag.parseJson(jsonObject);
+                if (globalTag != null) {
+                    collections.add(globalTag);
+                }
+            }
+            book.setTags(collections);
+        }
+
+        String origin_title = object.optString("origin_title");
+        String image = object.optString("image");
+        String binding = object.optString("binding");
+
+        {
+            JSONArray translatorJSONArray = object.optJSONArray("translator");
+            List<String> collections = new ArrayList<String>();
+            for (int i = 0; i < translatorJSONArray.length(); i++) {
+                String result = translatorJSONArray.optString(i);
+                collections.add(result);
+            }
+            book.setTranslator(collections);
+        }
+
+        String catalog = object.optString("catalog");
+        Integer pages = object.optInt("pages");
+
+        {
+            JSONObject jsonObject = object.optJSONObject("images");
+            BookImage bookImage = BookImage.parseJson(jsonObject);
+            book.setImages(bookImage);
+        }
+
+        String alt = object.optString("alt");
+        String publisher = object.optString("publisher");
+        String isbn10 = object.optString("isbn10");
+        String isbn13 = object.optString("isbn13");
+        String title = object.optString("title");
+        String url = object.optString("url");
+        String alt_title = object.optString("alt_title");
+        String author_intro = object.optString("author_intro");
+        String summary = object.optString("summary");
+        String price = object.optString("price");
+
+        book.setSubtitle(subtitle);
+        book.setPubdate(pubdate);
+        book.setOrigin_title(origin_title);
+        book.setImage(image);
+        book.setBinding(binding);
+        book.setCatalog(catalog);
+        book.setPages(pages);
+        book.setAlt(alt);
+        book.setPublisher(publisher);
+        book.setIsbn10(isbn10);
+        book.setIsbn13(isbn13);
+        book.setTitle(title);
+        book.setUrl(url);
+        book.setAlt_title(alt_title);
+        book.setAuthor_intro(author_intro);
+        book.setSummary(summary);
+        book.setPrice(price);
+
+        return book;
+
     }
+
+    public Book() {
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeParcelable(this.rating, 0);
+        dest.writeString(this.subtitle);
+        dest.writeList(this.author);
+        dest.writeString(this.pubdate);
+        dest.writeList(this.tags);
+        dest.writeString(this.origin_title);
+        dest.writeString(this.image);
+        dest.writeString(this.binding);
+        dest.writeList(this.translator);
+        dest.writeString(this.catalog);
+        dest.writeInt(this.pages);
+        dest.writeParcelable(this.images, 0);
+        dest.writeString(this.alt);
+        dest.writeString(this.publisher);
+        dest.writeString(this.isbn10);
+        dest.writeString(this.isbn13);
+        dest.writeString(this.title);
+        dest.writeString(this.url);
+        dest.writeString(this.alt_title);
+        dest.writeString(this.author_intro);
+        dest.writeString(this.summary);
+        dest.writeString(this.price);
+    }
+
+    private Book(Parcel in) {
+        this.rating = in.readParcelable(GlobalRating.class.getClassLoader());
+        this.subtitle = in.readString();
+        this.author = new ArrayList<String>();
+        in.readList(this.author, getClass().getClassLoader());
+        this.pubdate = in.readString();
+        this.tags = new ArrayList<GlobalTag>();
+        in.readList(this.tags, getClass().getClassLoader());
+        this.origin_title = in.readString();
+        this.image = in.readString();
+        this.binding = in.readString();
+        this.translator = new ArrayList<String>();
+        in.readList(this.translator,getClass().getClassLoader());
+        this.catalog = in.readString();
+        this.pages = in.readInt();
+        this.images = in.readParcelable(BookImage.class.getClassLoader());
+        this.alt = in.readString();
+        this.publisher = in.readString();
+        this.isbn10 = in.readString();
+        this.isbn13 = in.readString();
+        this.title = in.readString();
+        this.url = in.readString();
+        this.alt_title = in.readString();
+        this.author_intro = in.readString();
+        this.summary = in.readString();
+        this.price = in.readString();
+    }
+
+    public static final Creator<Book> CREATOR = new Creator<Book>() {
+        public Book createFromParcel(Parcel source) {
+            return new Book(source);
+        }
+
+        public Book[] newArray(int size) {
+            return new Book[size];
+        }
+    };
 }

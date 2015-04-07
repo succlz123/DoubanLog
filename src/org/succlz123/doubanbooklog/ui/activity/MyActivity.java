@@ -1,7 +1,9 @@
 package org.succlz123.doubanbooklog.ui.activity;
 
+import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.net.ConnectivityManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -207,10 +209,20 @@ public class MyActivity extends FragmentActivity {
                         ImageView imageView = (ImageView) view.findViewById(R.id.list_view_info_img);
                         TextView textView1 = (TextView) view.findViewById(R.id.darwer_user_name);
                         TextView textView2 = (TextView) view.findViewById(R.id.darwer_creat_time);
-                        Button button=(Button)view.findViewById(R.id.list_view_info_logout);
+                        Button button = (Button) view.findViewById(R.id.list_view_info_logout);
+                        ConnectivityManager con = (ConnectivityManager) getSystemService(Activity.CONNECTIVITY_SERVICE);
+                        boolean wifi = con.getNetworkInfo(ConnectivityManager.TYPE_WIFI).isConnectedOrConnecting();
+                        boolean internet = con.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).isConnectedOrConnecting();
                         if (DoubanApplication.getInstance().getAccount() != null) {
-                            new MyInfoAsyncTask(textView1, DoubanApplication.getInstance().getAccount(), textView2, imageView)
-                                    .executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+                            if (wifi | internet) {
+                                new MyInfoAsyncTask(textView1, DoubanApplication.getInstance().getAccount(), textView2, imageView)
+                                        .executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+
+                            } else {
+                                textView1.setText("网络未连接");
+                                Toast.makeText(getApplicationContext(), "网络未连接", Toast.LENGTH_LONG)
+                                        .show();
+                            }
                             button.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
@@ -359,7 +371,7 @@ public class MyActivity extends FragmentActivity {
 
             DbInfo info = DbInfoApi.getDbInfo(this.token.getAccess_token());
             publishProgress(info);
-            String xx=info.getLarge_avatar();
+            String xx = info.getLarge_avatar();
             bitmap = GetBmApi.getBitMap(xx);
             return info;
         }

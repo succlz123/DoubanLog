@@ -10,10 +10,9 @@ import org.json.JSONObject;
 public class AuthorUser implements Parcelable {
 
     private String name;
-    private Boolean is_banned;
     private String url;
     private String avatar;
-    private Integer uid;
+    private int uid;
     private String alt;//读书主页
     private String large_avatar;
 
@@ -23,14 +22,6 @@ public class AuthorUser implements Parcelable {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Boolean is_banned() {
-        return is_banned;
-    }
-
-    public void setIs_banned(Boolean is_banned) {
-        this.is_banned = is_banned;
     }
 
     public String getUrl() {
@@ -53,7 +44,7 @@ public class AuthorUser implements Parcelable {
         return uid;
     }
 
-    public void setUid(Integer uid) {
+    public void setUid(int uid) {
         this.uid = uid;
     }
 
@@ -77,7 +68,6 @@ public class AuthorUser implements Parcelable {
         AuthorUser authorUser = new AuthorUser();
 
         String name = jsonObject.optString("name");
-        Boolean is_banned = jsonObject.optBoolean("is_banned");
         String url = jsonObject.optString("url");
         String avatar = jsonObject.optString("avatar");
         Integer uid = jsonObject.optInt("uid");
@@ -85,7 +75,6 @@ public class AuthorUser implements Parcelable {
         String large_avatar = jsonObject.optString("large_avatar");
 
         authorUser.setName(name);
-        authorUser.setIs_banned(is_banned);
         authorUser.setUrl(url);
         authorUser.setAvatar(avatar);
         authorUser.setUid(uid);
@@ -103,10 +92,9 @@ public class AuthorUser implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.name);
-        dest.writeValue(this.is_banned);
         dest.writeString(this.url);
         dest.writeString(this.avatar);
-        dest.writeValue(this.uid);
+        dest.writeInt(this.uid);
         dest.writeString(this.alt);
         dest.writeString(this.large_avatar);
     }
@@ -116,10 +104,9 @@ public class AuthorUser implements Parcelable {
 
     private AuthorUser(Parcel in) {
         this.name = in.readString();
-        this.is_banned = (Boolean) in.readValue(Boolean.class.getClassLoader());
         this.url = in.readString();
         this.avatar = in.readString();
-        this.uid = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.uid = in.readInt();
         this.alt = in.readString();
         this.large_avatar = in.readString();
     }

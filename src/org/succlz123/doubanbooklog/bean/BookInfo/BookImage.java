@@ -1,16 +1,18 @@
-package org.succlz123.doubanbooklog.bean.BookInfo;
+package org.succlz123.doubanbooklog.bean.bookinfo;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
  * Created by fashi on 2015/4/1.
  */
-public class BookImage {
+public class BookImage implements Parcelable {
 
-    private String small;//·âÃæÐ¡Í¼
-    private String large;//·âÃæ´óÍ¼
-    private String medium;//·âÃæÖÐÍ¼
+    private String small;//ï¿½ï¿½ï¿½ï¿½Ð¡Í¼
+    private String large;//ï¿½ï¿½ï¿½ï¿½ï¿½Í¼
+    private String medium;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼
 
     public String getSmall() {
         return small;
@@ -54,4 +56,35 @@ public class BookImage {
         }
         return null;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.small);
+        dest.writeString(this.large);
+        dest.writeString(this.medium);
+    }
+
+    public BookImage() {
+    }
+
+    private BookImage(Parcel in) {
+        this.small = in.readString();
+        this.large = in.readString();
+        this.medium = in.readString();
+    }
+
+    public static final Parcelable.Creator<BookImage> CREATOR = new Parcelable.Creator<BookImage>() {
+        public BookImage createFromParcel(Parcel source) {
+            return new BookImage(source);
+        }
+
+        public BookImage[] newArray(int size) {
+            return new BookImage[size];
+        }
+    };
 }

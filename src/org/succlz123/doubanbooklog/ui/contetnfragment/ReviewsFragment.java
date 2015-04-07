@@ -37,7 +37,7 @@ public class ReviewsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.reviews_fragment, container, false);
         Intent intent = getActivity().getIntent();
-        dbCollection = (DbCollection) intent.getSerializableExtra("book_info");
+        dbCollection = (DbCollection) intent.getParcelableExtra("book_info");
 
         xListView = (XListView) view.findViewById(R.id.reviews_xlistview);
 

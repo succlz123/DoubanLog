@@ -23,7 +23,7 @@ public class AnnotationDialogFragment extends DialogFragment {
     public static AnnotationDialogFragment newInstance(AnnotationResult annotationResult) {
         AnnotationDialogFragment annotationDialogFragment = new AnnotationDialogFragment();
         Bundle bundle = new Bundle();
-        bundle.putSerializable("annotationResult", annotationResult);
+        bundle.putParcelable("annotationResult", annotationResult);
         annotationDialogFragment.setArguments(bundle);
         return annotationDialogFragment;
     }
@@ -37,7 +37,7 @@ public class AnnotationDialogFragment extends DialogFragment {
         View view = inflater.inflate(R.layout.annotation_dialogfragment, null);
         builer.setView(view).setNegativeButton("关闭", null);
 
-        AnnotationResult annotationResult = (AnnotationResult) getArguments().getSerializable("annotationResult");
+        AnnotationResult annotationResult = (AnnotationResult) getArguments().getParcelable("annotationResult");
 
         ImageView avater_img = (ImageView) view.findViewById(R.id.annotation_dialog_img);
         TextView time = (TextView) view.findViewById(R.id.annotation_dialog_time);

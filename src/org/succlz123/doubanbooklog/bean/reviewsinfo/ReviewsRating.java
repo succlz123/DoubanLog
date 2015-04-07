@@ -1,13 +1,13 @@
 package org.succlz123.doubanbooklog.bean.reviewsinfo;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import org.json.JSONObject;
-
-import java.io.Serializable;
 
 /**
  * Created by fashi on 2015/4/6.
  */
-public class ReviewsRating implements Serializable {
+public class ReviewsRating implements Parcelable {
 
     private int count;//
     private int max;//
@@ -50,4 +50,35 @@ public class ReviewsRating implements Serializable {
         reviewsRating.setValue(value);
         return  reviewsRating;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(this.count);
+        dest.writeInt(this.max);
+        dest.writeInt(this.value);
+    }
+
+    public ReviewsRating() {
+    }
+
+    private ReviewsRating(Parcel in) {
+        this.count = in.readInt();
+        this.max = in.readInt();
+        this.value = in.readInt();
+    }
+
+    public static final Parcelable.Creator<ReviewsRating> CREATOR = new Parcelable.Creator<ReviewsRating>() {
+        public ReviewsRating createFromParcel(Parcel source) {
+            return new ReviewsRating(source);
+        }
+
+        public ReviewsRating[] newArray(int size) {
+            return new ReviewsRating[size];
+        }
+    };
 }

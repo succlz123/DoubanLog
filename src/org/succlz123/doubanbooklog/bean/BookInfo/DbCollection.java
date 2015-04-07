@@ -1,20 +1,21 @@
-package org.succlz123.doubanbooklog.bean.BookInfo;
+package org.succlz123.doubanbooklog.bean.bookinfo;
 
-import org.json.JSONException;
+import android.os.Parcel;
+import android.os.Parcelable;
 import org.json.JSONObject;
 
 /**
  * Created by fashi on 2015/4/1.
  */
-public class DbCollection {
+public class DbCollection implements Parcelable {
 
-    private String status;//±ê¼ÇÄã¶Ô´ËÊéµÄÔÄ¶Á×´Ì¬ Ä¬ÈÏ ÔÚ¶Á reading ¶Á¹ý read Ïë¶Á wish
-    private MyRating rating;//ÄãµÄÆÀ·Ö
-    private String updated;//×îºóÓÃ»§¹ØÓÚ´ËÊé¼®µÄÐÅÏ¢¸üÐÂÊ±¼ä
-    private int user_id;//ÓÃ»§id
-    private Book book;//·µ»Ø»ØÀ´µÄÊé¼®ÐÅÏ¢
-    private int book_id;//Êé¼®ÔÚ¶¹°êµÄid
-    private int id;//²»ÖªµÀÓÐÊ²Ã´ÓÃµÄid
+    private String status;//ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½ï¿½Ä¶ï¿½×´Ì¬ Ä¬ï¿½ï¿½ ï¿½Ú¶ï¿½ reading ï¿½ï¿½ï¿½ï¿½ read ï¿½ï¿½ï¿½ wish
+    private MyRating rating;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    private String updated;//ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Ú´ï¿½ï¿½é¼®ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
+    private int user_id;//ï¿½Ã»ï¿½id
+    private Book book;//ï¿½ï¿½ï¿½Ø»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é¼®ï¿½ï¿½Ï¢
+    private int book_id;//ï¿½é¼®ï¿½Ú¶ï¿½ï¿½ï¿½ï¿½id
+    private int id;//ï¿½ï¿½Öªï¿½ï¿½ï¿½ï¿½Ê²Ã´ï¿½Ãµï¿½id
 
     public String getStatus() {
         return status;
@@ -73,38 +74,74 @@ public class DbCollection {
     }
 
     public static DbCollection parseJson(JSONObject object) {
-        try {
-            DbCollection dbCollection = new DbCollection();
-            String status = object.getString("status");
-            String updated = object.getString("updated");
-            Integer user_id = object.getInt("user_id");
-            Integer book_id = object.getInt("book_id");
-            Integer id = object.getInt("id");
+        DbCollection dbCollection = new DbCollection();
+        String status = object.optString("status");
+        String updated = object.optString("updated");
+        Integer user_id = object.optInt("user_id");
+        Integer book_id = object.optInt("book_id");
+        Integer id = object.optInt("id");
 
-            {
-                JSONObject jsonObject = object.optJSONObject("rating");
+        {
+            JSONObject jsonObject = object.optJSONObject("rating");
+            if (jsonObject != null) {
                 MyRating myRating = MyRating.parseJson(jsonObject);
                 dbCollection.setRating(myRating);
             }
-
-            {
-                JSONObject jsonObject = object.optJSONObject("book");
-                Book book = Book.parseJson(jsonObject);
-                dbCollection.setBook(book);
-            }
-
-            dbCollection.setStatus(status);
-            dbCollection.setUpdated(updated);
-            dbCollection.setUser_id(user_id);
-            dbCollection.setBook_id(book_id);
-            dbCollection.setUser_id(id);
-
-            return dbCollection;
-        } catch (JSONException e) {
-            e.printStackTrace();
         }
-        return null;
+
+        {
+            JSONObject jsonObject = object.optJSONObject("book");
+            Book book = Book.parseJson(jsonObject);
+            dbCollection.setBook(book);
+        }
+
+        dbCollection.setStatus(status);
+        dbCollection.setUpdated(updated);
+        dbCollection.setUser_id(user_id);
+        dbCollection.setBook_id(book_id);
+        dbCollection.setUser_id(id);
+
+        return dbCollection;
+
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.status);
+        dest.writeParcelable(this.rating, 0);
+        dest.writeString(this.updated);
+        dest.writeInt(this.user_id);
+        dest.writeParcelable(this.book, 0);
+        dest.writeInt(this.book_id);
+        dest.writeInt(this.id);
+    }
+
+    public DbCollection() {
+    }
+
+    private DbCollection(Parcel in) {
+        this.status = in.readString();
+        this.rating = in.readParcelable(MyRating.class.getClassLoader());
+        this.updated = in.readString();
+        this.user_id = in.readInt();
+        this.book = in.readParcelable(Book.class.getClassLoader());
+        this.book_id = in.readInt();
+        this.id = in.readInt();
+    }
+
+    public static final Parcelable.Creator<DbCollection> CREATOR = new Parcelable.Creator<DbCollection>() {
+        public DbCollection createFromParcel(Parcel source) {
+            return new DbCollection(source);
+        }
+
+        public DbCollection[] newArray(int size) {
+            return new DbCollection[size];
+        }
+    };
 }
 

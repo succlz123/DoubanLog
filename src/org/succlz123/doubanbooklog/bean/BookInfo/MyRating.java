@@ -1,16 +1,18 @@
-package org.succlz123.doubanbooklog.bean.BookInfo;
+package org.succlz123.doubanbooklog.bean.bookinfo;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
  * Created by fashi on 2015/4/1.
  */
-public class MyRating {
+public class MyRating implements Parcelable {
 
-    private int max;//×î´óÆÀ·Ö Ä¬ÈÏ5
-    private int value;//ÄãµÄÆÀ·Ö
-    private int min;//×îÐ¡ÆÀ·Ö Ä¬ÈÏ0
+    private int max;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä¬ï¿½ï¿½5
+    private int value;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    private int min;//ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ Ä¬ï¿½ï¿½0
 
     public int getMax() {
         return max;
@@ -54,4 +56,35 @@ public class MyRating {
         }
         return null;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(this.max);
+        dest.writeInt(this.value);
+        dest.writeInt(this.min);
+    }
+
+    public MyRating() {
+    }
+
+    private MyRating(Parcel in) {
+        this.max = in.readInt();
+        this.value = in.readInt();
+        this.min = in.readInt();
+    }
+
+    public static final Parcelable.Creator<MyRating> CREATOR = new Parcelable.Creator<MyRating>() {
+        public MyRating createFromParcel(Parcel source) {
+            return new MyRating(source);
+        }
+
+        public MyRating[] newArray(int size) {
+            return new MyRating[size];
+        }
+    };
 }

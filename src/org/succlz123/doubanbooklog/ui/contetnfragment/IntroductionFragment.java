@@ -28,7 +28,7 @@ public class IntroductionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.introduction_fragment, container, false);
         Intent intent = getActivity().getIntent();
-        dbCollection = (DbCollection) intent.getSerializableExtra("book_info");
+        dbCollection = (DbCollection) intent.getParcelableExtra("book_info");
 
         ImageView imageView = (ImageView) view.findViewById(R.id.introduction_book_imageview);
         TextView author = (TextView) view.findViewById(R.id.introduction_text_author);

@@ -47,7 +47,7 @@ public class AnnotationFragment extends Fragment {
         View view = inflater.inflate(R.layout.annotation_fragment, container, false);
 
         Intent intent = getActivity().getIntent();
-        dbCollection = (DbCollection) intent.getSerializableExtra("book_info");//
+        dbCollection = (DbCollection) intent.getParcelableExtra("book_info");//
         //上一个fragment传过来的数据 在这里进行接受 需要强制转换
 
         xListView = (XListView) view.findViewById(R.id.annotation_xlistview);

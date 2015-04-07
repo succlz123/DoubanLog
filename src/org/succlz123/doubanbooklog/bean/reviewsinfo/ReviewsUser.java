@@ -1,13 +1,13 @@
 package org.succlz123.doubanbooklog.bean.reviewsinfo;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import org.json.JSONObject;
-
-import java.io.Serializable;
 
 /**
  * Created by fashi on 2015/4/6.
  */
-public class ReviewsUser implements Serializable{
+public class ReviewsUser implements Parcelable {
 
     private String name;
     private String url;
@@ -62,4 +62,37 @@ public class ReviewsUser implements Serializable{
 
         return reviewsUser;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.name);
+        dest.writeString(this.url);
+        dest.writeString(this.avatar);
+        dest.writeValue(this.uid);
+    }
+
+    public ReviewsUser() {
+    }
+
+    private ReviewsUser(Parcel in) {
+        this.name = in.readString();
+        this.url = in.readString();
+        this.avatar = in.readString();
+        this.uid = (Integer) in.readValue(Integer.class.getClassLoader());
+    }
+
+    public static final Parcelable.Creator<ReviewsUser> CREATOR = new Parcelable.Creator<ReviewsUser>() {
+        public ReviewsUser createFromParcel(Parcel source) {
+            return new ReviewsUser(source);
+        }
+
+        public ReviewsUser[] newArray(int size) {
+            return new ReviewsUser[size];
+        }
+    };
 }

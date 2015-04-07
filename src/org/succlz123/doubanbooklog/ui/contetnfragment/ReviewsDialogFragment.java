@@ -21,7 +21,7 @@ public class ReviewsDialogFragment extends Fragment {
     public static ReviewsDialogFragment newInstance(ReviewsResult reviewsResult) {
         ReviewsDialogFragment reviewsDialogFragment = new ReviewsDialogFragment();
         Bundle bundle = new Bundle();
-        bundle.putSerializable("reviewsResult", reviewsResult);
+        bundle.putParcelable("reviewsResult", reviewsResult);
         reviewsDialogFragment.setArguments(bundle);
         return reviewsDialogFragment;
     }
@@ -44,7 +44,7 @@ public class ReviewsDialogFragment extends Fragment {
         TextView titel = (TextView) view.findViewById(R.id.reviews_dialog_title);
         TextView content = (TextView) view.findViewById(R.id.reviews_dialog_content);
 
-        ReviewsResult reviewsResult=(ReviewsResult)getArguments().getSerializable("reviewsResult");
+        ReviewsResult reviewsResult=(ReviewsResult)getArguments().getParcelable("reviewsResult");
 
         new ImageViewAsyncTask(avater_img,reviewsResult).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
         time.setText(reviewsResult.getCreate_time());
