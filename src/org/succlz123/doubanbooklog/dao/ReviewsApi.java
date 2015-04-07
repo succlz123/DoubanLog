@@ -10,8 +10,11 @@ import org.succlz123.doubanbooklog.support.http.JavaHttpClient;
  */
 public class ReviewsApi {
 
-    public static ReviewsObject GetReveiws(int id) {
+    public static ReviewsObject GetReveiws(int id,int start) {
         String url = ApiUrlHelper.USER_BOOK_REVIEWS.replace(":id", Integer.toString(id));
+        if(start!=0){
+            url=url+"?start="+start;
+        }
         String json = JavaHttpClient.getInstance().doGet(url, null, null);
 
         try {

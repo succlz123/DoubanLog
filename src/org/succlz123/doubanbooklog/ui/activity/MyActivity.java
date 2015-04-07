@@ -217,7 +217,6 @@ public class MyActivity extends FragmentActivity {
                             if (wifi | internet) {
                                 new MyInfoAsyncTask(textView1, DoubanApplication.getInstance().getAccount(), textView2, imageView)
                                         .executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-
                             } else {
                                 textView1.setText("网络未连接");
                                 Toast.makeText(getApplicationContext(), "网络未连接", Toast.LENGTH_LONG)

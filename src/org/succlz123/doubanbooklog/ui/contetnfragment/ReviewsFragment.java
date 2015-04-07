@@ -21,6 +21,8 @@ import org.succlz123.doubanbooklog.support.com.shamanland.fab.ShowHideOnScroll;
 import org.succlz123.doubanbooklog.support.xlistview.me.maxwin.view.XListView;
 import org.succlz123.doubanbooklog.ui.activity.SetAnnotationActivity;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -32,6 +34,8 @@ public class ReviewsFragment extends Fragment {
     private DbCollection dbCollection;
     private List<ReviewsResult> reviewsResult;
     private ReviewsObject reviewsObject;
+    private int start;
+    private Boolean loadMoreBoolean;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -52,7 +56,9 @@ public class ReviewsFragment extends Fragment {
             }
         });
 
-        new ReviewsAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+//        new ReviewsAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        new ReviewsAsyncTask(dbCollection.getBook_id(), 0).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+
 
         xListView.setOnTouchListener(new ShowHideOnScroll(fab));//把xlistview和浮动imagebutton组合
         xListView.setPullLoadEnable(false);//默认不显示xlistview
@@ -74,12 +80,12 @@ public class ReviewsFragment extends Fragment {
         xListView.setXListViewListener(new XListView.IXListViewListener() {
             @Override
             public void onRefresh() {
-
+                reFresh();
             }
 
             @Override
             public void onLoadMore() {
-
+                loadMore();
             }
         });
 
@@ -140,16 +146,21 @@ public class ReviewsFragment extends Fragment {
     private class ReviewsAsyncTask extends AsyncTask<Void, Void, ReviewsObject> {
 
         private int id;
+        private int start;
+
+        public ReviewsAsyncTask(int id, int start) {
+            this.id = id;
+            this.start = start;
+        }
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            id = dbCollection.getBook_id();
         }
 
         @Override
         protected ReviewsObject doInBackground(Void... params) {
-            return ReviewsApi.GetReveiws(id);
+            return ReviewsApi.GetReveiws(id, start);
         }
 
         @Override
@@ -157,6 +168,16 @@ public class ReviewsFragment extends Fragment {
             super.onPostExecute(aVoid);
             reviewsObject = aVoid;
             baseAdapter.notifyDataSetChanged();
+            reset();
+            loadMoreBoolean = (aVoid.getTotal() <= aVoid.getStart());
+            if(loadMoreBoolean||aVoid.getStart()<20) {
+                xListView.setPullLoadEnable(false);
+            }else if(!loadMoreBoolean){
+                xListView.setPullLoadEnable(true);
+            }
+//            if(aVoid.ge){
+//                reset();
+//            }
         }
     }
 
@@ -187,4 +208,23 @@ public class ReviewsFragment extends Fragment {
         }
     }
 
+    private void reset() {
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy年MM月dd日    HH:mm:ss     ");
+        Date curDate = new Date(System.currentTimeMillis());//获取当前时间
+        String str = formatter.format(curDate);
+
+        xListView.stopRefresh();
+        xListView.stopLoadMore();
+        xListView.setRefreshTime(str);
+    }
+
+
+    private void reFresh() {
+        new ReviewsAsyncTask(dbCollection.getBook_id(), 0).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+    }
+
+    private void loadMore() {
+        start = start + 20;
+        new ReviewsAsyncTask(dbCollection.getBook_id(), start).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+    }
 }
