@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
 import org.succlz123.doubanbooklog.R;
-import org.succlz123.doubanbooklog.bean.bookinfo34.DbCollection;
+import org.succlz123.doubanbooklog.bean.bookinfo.DbCollection;
 import org.succlz123.doubanbooklog.bean.reviewsinfo.ReviewsObject;
 import org.succlz123.doubanbooklog.bean.reviewsinfo.ReviewsResult;
 import org.succlz123.doubanbooklog.dao.GetBmApi;

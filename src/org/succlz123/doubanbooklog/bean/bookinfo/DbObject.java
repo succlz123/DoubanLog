@@ -1,4 +1,4 @@
-package org.succlz123.doubanbooklog.bean.bookinfo34;
+package org.succlz123.doubanbooklog.bean.bookinfo;
 
 import org.json.JSONArray;
 import org.json.JSONObject;

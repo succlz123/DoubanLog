@@ -44,13 +44,13 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/ui/contetnfragment/ReviewsFragment.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/ui/contetnfragment/ReviewsFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/ui/mainfragment/WishFragment.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/ui/mainfragment/WishFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\Source Code\github\DoubanBookLog\src\org\succlz123\doubanbooklog\bean\bookinfo3\Book.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo34/Book.java" />
-      <change type="MOVED" beforePath="D:\Source Code\github\DoubanBookLog\src\org\succlz123\doubanbooklog\bean\bookinfo3\BookImage.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo34/BookImage.java" />
-      <change type="MOVED" beforePath="D:\Source Code\github\DoubanBookLog\src\org\succlz123\doubanbooklog\bean\bookinfo3\DbCollection.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo34/DbCollection.java" />
-      <change type="MOVED" beforePath="D:\Source Code\github\DoubanBookLog\src\org\succlz123\doubanbooklog\bean\bookinfo3\DbObject.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo34/DbObject.java" />
-      <change type="MOVED" beforePath="D:\Source Code\github\DoubanBookLog\src\org\succlz123\doubanbooklog\bean\bookinfo3\GlobalRating.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo34/GlobalRating.java" />
-      <change type="MOVED" beforePath="D:\Source Code\github\DoubanBookLog\src\org\succlz123\doubanbooklog\bean\bookinfo3\GlobalTag.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo34/GlobalTag.java" />
-      <change type="MOVED" beforePath="D:\Source Code\github\DoubanBookLog\src\org\succlz123\doubanbooklog\bean\bookinfo3\MyRating.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo34/MyRating.java" />
+      <change type="MOVED" beforePath="D:\Source Code\github\DoubanBookLog\src\org\succlz123\doubanbooklog\bean\bookinfo34\Book.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo/Book.java" />
+      <change type="MOVED" beforePath="D:\Source Code\github\DoubanBookLog\src\org\succlz123\doubanbooklog\bean\bookinfo34\BookImage.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo/BookImage.java" />
+      <change type="MOVED" beforePath="D:\Source Code\github\DoubanBookLog\src\org\succlz123\doubanbooklog\bean\bookinfo34\DbCollection.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo/DbCollection.java" />
+      <change type="MOVED" beforePath="D:\Source Code\github\DoubanBookLog\src\org\succlz123\doubanbooklog\bean\bookinfo34\DbObject.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo/DbObject.java" />
+      <change type="MOVED" beforePath="D:\Source Code\github\DoubanBookLog\src\org\succlz123\doubanbooklog\bean\bookinfo34\GlobalRating.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo/GlobalRating.java" />
+      <change type="MOVED" beforePath="D:\Source Code\github\DoubanBookLog\src\org\succlz123\doubanbooklog\bean\bookinfo34\GlobalTag.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo/GlobalTag.java" />
+      <change type="MOVED" beforePath="D:\Source Code\github\DoubanBookLog\src\org\succlz123\doubanbooklog\bean\bookinfo34\MyRating.java" afterPath="$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo/MyRating.java" />
     </list>
     <ignored path="DoubanBookLog.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -306,7 +306,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bookinfo34" />
+              <option name="myItemId" value="bookinfo" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -684,7 +684,13 @@
       <option name="project" value="LOCAL" />
       <updated>1428409631205</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="44444">
+      <created>1428409773854</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1428409773854</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -784,7 +790,8 @@
     <MESSAGE value="123" />
     <MESSAGE value="parcelable" />
     <MESSAGE value="22" />
-    <option name="LAST_COMMIT_MESSAGE" value="22" />
+    <MESSAGE value="44444" />
+    <option name="LAST_COMMIT_MESSAGE" value="44444" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -822,7 +829,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo34/Book.java">
+    <entry file="file://$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo/Book.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -878,7 +885,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo34/BookImage.java">
+    <entry file="file://$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo/BookImage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26296958">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
@@ -906,7 +913,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo34/DbCollection.java">
+    <entry file="file://$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo/DbCollection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26296958">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
@@ -963,7 +970,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo34/Book.java">
+    <entry file="file://$PROJECT_DIR$/src/org/succlz123/doubanbooklog/bean/bookinfo/Book.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.2021467">
           <caret line="350" column="32" selection-start-line="350" selection-start-column="32" selection-end-line="350" selection-end-column="32" />

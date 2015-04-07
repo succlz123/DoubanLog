@@ -1,4 +1,4 @@
-package org.succlz123.doubanbooklog.bean.bookinfo34;
+package org.succlz123.doubanbooklog.bean.bookinfo;
 
 import android.os.Parcel;
 import android.os.Parcelable;

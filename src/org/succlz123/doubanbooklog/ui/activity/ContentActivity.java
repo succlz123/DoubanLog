@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toolbar;
 import org.succlz123.doubanbooklog.R;
-import org.succlz123.doubanbooklog.bean.bookinfo34.DbCollection;
+import org.succlz123.doubanbooklog.bean.bookinfo.DbCollection;
 import org.succlz123.doubanbooklog.support.slidingtab.SlidingTabLayout;
 import org.succlz123.doubanbooklog.ui.contetnfragment.AnnotationFragment;
 import org.succlz123.doubanbooklog.ui.contetnfragment.IntroductionFragment;
