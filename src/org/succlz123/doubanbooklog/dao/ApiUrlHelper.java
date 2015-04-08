@@ -18,5 +18,6 @@ public class ApiUrlHelper {
     public static final String USER_ONEBOOK_NOTE = BASE + "/v2/book/:id/annotations";//获取某本图书的所有笔记
     public static final String USER_ONENOTE_INFO = BASE + "/v2/book/annotation/:id";//获取某篇笔记的信息
     public static final String USER_BOOK_CATALOG = BASE + "/v2/book/series/:id/books";//获取丛书书目信息
-    public static final String USER_BOOK_REVIEWS="https://frodo.douban.com/api/v2/book/:id/reviews";//获取图书评论
+    public static final String USER_BOOK_REVIEWS = "https://frodo.douban.com/api/v2/book/:id/reviews?apikey=0dad551ec0f84ed02907ff5c42e8ec70&channel=WanDouJia_Parter&count=30";//获取图书评论
+//    public static final String USER_BOOK_REVIEWS = "https://frodo.douban.com/api/v2/book/:id/reviews?udid=&apikey=&channel=WanDouJia_Parter&count=";//获取图书评论
 }

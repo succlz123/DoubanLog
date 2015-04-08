@@ -30,7 +30,7 @@ public class LoginActivity extends Activity {
 
     private static final String doubanUrl = "https://www.douban.com/service/auth2/auth";
     private static final String tokenUrl = "https://www.douban.com/service/auth2/token";
-    private static final String apiKey = "0e24b05dfc621fc02a6e1119f5265f40";
+    public static final String apiKey = "0e24b05dfc621fc02a6e1119f5265f40";
     private static final String secret = "e8a9edd1c47e067b";
     private static final String redirectUrl = "doubanbooklog://ok";
 
