@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/whitesmoke">
+
+    <include layout="@layout/toolbar" android:id="@+id/include"/>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal">
+        <EditText android:layout_width="150dp"
+                  android:layout_height="35dp"
+                  android:hint="页码"
+                  android:id="@+id/pagination"
+                  android:singleLine="true"
+                  android:layout_marginTop="10dp"
+                  android:layout_marginLeft="10dp"
+                  android:layout_marginRight="10dp"
+                  android:layout_marginBottom="5dp"
+                  android:textSize="16sp"
+                  android:background="@drawable/shape"
+                  android:paddingLeft="3dp"
+                  android:maxLength="6"
+                  android:layout_centerVertical="true"
+                  android:digits="1234567890"
+                  android:textColor="@color/black"/>
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="页码或章节名选填其一"
+                  android:layout_margin="10dp"
+                  android:textSize="14sp"
+                  android:editable="false"
+
+                  android:textColor="@color/basecolor"
+                />
+    </LinearLayout>
+
+    <EditText android:layout_width="match_parent"
+              android:layout_height="35dp"
+              android:hint="章节名(最多100字)"
+              android:id="@+id/chapter_title"
+              android:paddingLeft="3dp"
+              android:singleLine="true"
+              android:layout_marginTop="5dp"
+              android:layout_marginLeft="10dp"
+              android:layout_marginRight="10dp"
+              android:layout_marginBottom="5dp"
+              android:textSize="16sp"
+              android:background="@drawable/shape"
+              android:maxLength="100"/>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal">
+
+        <Button android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:background="@color/basecolor"
+                android:textSize="14sp"
+                android:text="标为原文"
+                android:id="@+id/yuanwen"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/white"/>
+
+        <Button android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:background="@color/basecolor"
+                android:textSize="14sp"
+                android:text="插入图片"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/white"/>
+
+        <View android:layout_width="0dp"
+              android:layout_height="1dp"
+              android:layout_weight="1"/>
+
+        <CheckBox android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="仅自己可见"
+                  android:layout_marginRight="10dp"
+                  android:layout_gravity="center_vertical"
+                />
+
+    </LinearLayout>
+
+    <EditText android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:id="@+id/annotation_edit_text"
+              android:hint="笔记内容(至少15字,图片大小不得超过3M)"
+              android:paddingLeft="3dp"
+              android:paddingTop="3dp"
+              android:background="@drawable/shape"
+              android:layout_marginLeft="10dp"
+              android:layout_marginRight="10dp"
+              android:layout_marginBottom="10dp"
+              android:textSize="18sp"
+              android:gravity="top"/>
+
+</LinearLayout>

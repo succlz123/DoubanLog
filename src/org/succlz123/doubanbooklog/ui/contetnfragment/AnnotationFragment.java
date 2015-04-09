@@ -214,8 +214,8 @@ public class AnnotationFragment extends Fragment {
         @Override
         protected void onPostExecute(AnnotationObject aVoid) {
             super.onPostExecute(aVoid);
-
             AnnotationFragment.this.annotationObject.getAnnotationResult().addAll(aVoid.getAnnotationResult());
+            //把新刷新出来的数据 加入到上面去 然后刷新listview
             baseAdapter.notifyDataSetChanged();
             reset();
             if (annotationResult.size() < 20 || annotationObject.getStart() >= annotationObject.getTotal()) {

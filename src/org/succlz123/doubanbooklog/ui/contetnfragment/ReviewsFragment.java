@@ -20,6 +20,7 @@ import org.succlz123.doubanbooklog.support.com.shamanland.fab.FloatingActionButt
 import org.succlz123.doubanbooklog.support.com.shamanland.fab.ShowHideOnScroll;
 import org.succlz123.doubanbooklog.support.xlistview.me.maxwin.view.XListView;
 import org.succlz123.doubanbooklog.ui.activity.SetAnnotationActivity;
+import org.succlz123.doubanbooklog.ui.activity.SetReviewsActivity;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -36,6 +37,7 @@ public class ReviewsFragment extends Fragment {
     private ReviewsObject reviewsObject;
     private int start;
     private Boolean loadMoreBoolean;
+    private TextView none;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -45,13 +47,14 @@ public class ReviewsFragment extends Fragment {
 
         xListView = (XListView) view.findViewById(R.id.reviews_xlistview);
 
+        none=(TextView)view.findViewById(R.id.reviews_none);
         fab = (FloatingActionButton) view.findViewById(R.id.reviews_fab);//浮动的imagebutton
         fab.setShadow(true);
         fab.setColor(Color.parseColor("#0097a7"));
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), SetAnnotationActivity.class);
+                Intent intent = new Intent(getActivity(), SetReviewsActivity.class);
                 startActivityForResult(intent, 2);
             }
         });
@@ -155,7 +158,7 @@ public class ReviewsFragment extends Fragment {
 
         @Override
         protected ReviewsObject doInBackground(Void... params) {
-            return ReviewsApi.GetReveiws(id,0);
+            return ReviewsApi.GetReveiws(id, 0);
         }
 
         @Override
@@ -164,6 +167,11 @@ public class ReviewsFragment extends Fragment {
             reviewsObject = aVoid;
             baseAdapter.notifyDataSetChanged();
             reset();
+            loadMoreBoolean = aVoid.getReviewsResult().size() <reviewsObject.getTotal();
+            xListView.setPullLoadEnable(loadMoreBoolean);
+            if (aVoid.getTotal() == 0) {
+                none.setVisibility(View.VISIBLE);
+            }
         }
     }
 
@@ -194,6 +202,36 @@ public class ReviewsFragment extends Fragment {
         }
     }
 
+    private class LoadMoreAsyncTask extends AsyncTask<Void, Void, ReviewsObject> {
+        private int id;
+        private int xx;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            id = dbCollection.getBook_id();
+            start=xx+30;
+        }
+
+        @Override
+        protected ReviewsObject doInBackground(Void... params) {
+
+            return ReviewsApi.GetReveiws(id,start);
+        }
+
+        @Override
+        protected void onPostExecute(ReviewsObject aVoid) {
+            super.onPostExecute(aVoid);
+            xx=start;
+            reviewsObject.getReviewsResult().addAll(aVoid.getReviewsResult());
+            //把新刷新出来的数据 加入到上面去 然后刷新listview
+            baseAdapter.notifyDataSetChanged();
+            reset();
+            loadMoreBoolean=reviewsObject.getReviewsResult().size()>=reviewsObject.getTotal();
+            xListView.setPullLoadEnable(!loadMoreBoolean);
+        }
+    }
+
     private void reset() {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy年MM月dd日    HH:mm:ss     ");
         Date curDate = new Date(System.currentTimeMillis());//获取当前时间
@@ -211,6 +249,6 @@ public class ReviewsFragment extends Fragment {
 
     private void loadMore() {
 
-        new ReviewsAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        new LoadMoreAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     }
 }

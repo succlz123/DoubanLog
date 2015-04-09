@@ -7,8 +7,8 @@
     <!--listview 上的button  会覆盖listview 本身的 click监听-->
 
     <org.succlz123.doubanbooklog.support.roundimageview.XCRoundImageView
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
             android:id="@+id/list_view_info_img"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"

@@ -41,14 +41,14 @@ public class ContentActivity extends FragmentActivity {
         mToolbar.setTitle(title);
         mToolbar.setTitleTextColor(Color.parseColor("#FFFFFF"));
         setActionBar(mToolbar);
-        toolbarbtn = (Button) findViewById(R.id.toolbar_btn);
-        toolbarbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
-        toolbarbtn.setBackgroundResource(R.drawable.back);
+//        toolbarbtn = (Button) findViewById(R.id.toolbar_btn);
+//        toolbarbtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                onBackPressed();
+//            }
+//        });
+//        toolbarbtn.setBackgroundResource(R.drawable.back);
 
         viewPager = (ViewPager) findViewById(R.id.content_viewpager);
         viewPager.setOffscreenPageLimit(3);

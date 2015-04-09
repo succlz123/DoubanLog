@@ -1,10 +1,9 @@
 package org.succlz123.doubanbooklog.support.http;
 
+import com.squareup.okhttp.OkHttpClient;
+
 import javax.net.ssl.HttpsURLConnection;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
@@ -61,27 +60,18 @@ public class JavaHttpClient {
         return response.toString();
     }
 
-    public String doPost() {
+    public String doPost(String address) {
 
         try {
-            URL url = new URL("");
+            URL url = new URL(address);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("POST");
-            InputStream in = connection.getInputStream();
-//        InputStreamReader inx=new InputStreamReader(in);
-//        可以写成这样
-//        BufferedReader reader=new BufferedReader(inx);
-            if (connection.getResponseCode() == 200) {
-                BufferedReader reader = new BufferedReader(new InputStreamReader(in));
-                String line;
-                while ((line = reader.readLine()) != null) {
+            DataOutputStream out = new DataOutputStream(connection.getOutputStream());
 
-                }
-            }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
         return null;
     }
-
 }

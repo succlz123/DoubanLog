@@ -6,7 +6,6 @@ import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
@@ -30,7 +29,6 @@ public class MyActivity extends FragmentActivity {
 
     private Toolbar mToolbar;
     private DrawerLayout mDrawerLayout;
-    private ActionBarDrawerToggle mDrawerToggle;
     private ListView mDrawerListview;
     private Button toolbarbtn;
     private int position;

@@ -3,7 +3,8 @@
           package="org.succlz123.doubanbooklog"
           android:versionCode="1"
           android:versionName="1.0">
-    <uses-sdk android:minSdkVersion="21"/>
+    <uses-sdk android:minSdkVersion="21"
+            android:targetSdkVersion="22"/>
 
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -27,6 +28,7 @@
         <activity android:name=".ui.activity.ScanActivity"/>
         <activity android:name=".ui.activity.ContentActivity"/>
         <activity android:name=".ui.activity.SetAnnotationActivity"/>
+        <activity android:name=".ui.activity.SetReviewsActivity"/>
 
     </application>
 </manifest>

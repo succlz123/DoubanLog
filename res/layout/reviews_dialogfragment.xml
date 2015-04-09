@@ -58,8 +58,9 @@
                       android:orientation="vertical">
             <TextView android:layout_width="match_parent"
                       android:layout_height="match_parent"
-                      android:textSize="16sp"
+                      android:textSize="18sp"
                       android:layout_margin="10dp"
+                      android:lineSpacingExtra="3dp"
                       android:id="@+id/reviews_dialog_content"/>
         </LinearLayout>
     </ScrollView>

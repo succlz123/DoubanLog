@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/whitesmoke">
+
+    <include layout="@layout/toolbar" android:id="@+id/include"/>
+
+    <EditText android:layout_width="match_parent"
+              android:layout_height="35dp"
+              android:hint="标题(不能为空)"
+              android:id="@+id/title"
+              android:singleLine="true"
+              android:layout_marginTop="10dp"
+              android:layout_marginLeft="10dp"
+              android:layout_marginRight="10dp"
+              android:layout_marginBottom="5dp"
+              android:textSize="16sp"
+              android:background="@drawable/shape"
+              android:paddingLeft="3dp"
+              android:layout_centerVertical="true"
+              android:textColor="@color/black"/>
+
+    <EditText android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:hint="正文(内容最少150字)"
+              android:id="@+id/content"
+              android:layout_marginTop="5dp"
+              android:layout_marginLeft="10dp"
+              android:layout_marginRight="10dp"
+              android:layout_marginBottom="5dp"
+              android:textSize="18sp"
+              android:background="@drawable/shape"
+              android:paddingLeft="3dp"
+              android:paddingTop="5dp"
+              android:gravity="top"
+              android:textColor="@color/black"/>
+
+</LinearLayout>

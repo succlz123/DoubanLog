@@ -16,7 +16,7 @@ public class ReviewsApi {
 //        String apiKey="0dad551ec0f84ed02907ff5c42e8ec70";
         String url = ApiUrlHelper.USER_BOOK_REVIEWS.replace(":id", Integer.toString(id));
         if(start!=0){
-            url=url+"?start="+start;
+            url=url.replace("&count=30","&start="+start+"&count=30");
         }
         String json = JavaHttpClient.getInstance().doGet(url, null, null);
 
